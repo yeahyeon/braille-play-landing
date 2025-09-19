@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import BraillePlayLogo from "../assets/BraillePlay.svg";
 import "./Header.css";
 
 const Header = () => {
@@ -16,7 +17,7 @@ const Header = () => {
     <nav className="navbar navbar-expand-lg fixed-top app-navbar">
       <div className="container">
         <a className="navbar-brand d-flex align-items-center gap-2" href="/" aria-label="Braille Play home">
-          <span className="fw-semibold">Braille Play</span>
+          <img src={BraillePlayLogo} alt="Braille Play" className="logo-image" />
         </a>
         <button className="navbar-toggler border-0 px-2" type="button" onClick={toggleMenu} aria-label="Open menu">
           <i className="bi bi-list" style={{ fontSize: "1.5rem" }}></i>
