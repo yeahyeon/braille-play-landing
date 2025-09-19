@@ -3,8 +3,8 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer id="footer" className="footer dark-background">
-      <div className="container">
+    <footer id="footer" className="footer">
+      <div className="container-fluid">
         <div className="copyright text-center">
           <p>© Braille Play</p>
         </div>

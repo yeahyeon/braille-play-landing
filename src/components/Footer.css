@@ -1,8 +1,15 @@
 /* Footer Styles */
 .footer {
-  padding: 40px 0;
-  background-color: var(--background-color);
-  color: var(--default-color);
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  padding: 15px 0;
+  background-color: #065cc2;
+  color: #314862;
+  margin-top: auto;
 }
 
 .footer .copyright {
@@ -13,16 +20,6 @@
   margin: 0;
   font-size: 14px;
   font-weight: 400;
-  color: var(--default-color);
+  color: #ffffff;
   font-family: var(--default-font);
-}
-
-/* Dark background variant */
-.footer.dark-background {
-  background-color: var(--background-color);
-  color: var(--default-color);
-}
-
-.footer.dark-background .copyright p {
-  color: var(--default-color);
 }

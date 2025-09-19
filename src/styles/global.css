@@ -134,7 +134,5 @@ button:focus-visible {
 
 /* 큰 화면 (1440px 이상) */
 @media (min-width: 1440px) {
-  #root {
-    max-width: 1440px;
-  }
+  /* 최대 너비 제한 제거 - 모든 화면 크기에서 전체 너비 사용 */
 }
