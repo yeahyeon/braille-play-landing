@@ -1,0 +1,140 @@
+/* Font & Color Variables */
+:root {
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
+  --heading-font: "Quicksand", sans-serif;
+  --nav-font: "Open Sans", sans-serif;
+
+  --background-color: #ffffff;
+  --default-color: #314862;
+  --heading-color: #13447f;
+  --accent-color: #065cc2;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+}
+
+.light-background {
+  --background-color: #f7faff;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #065cc2;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --accent-color: #afcdf1;
+  --surface-color: #2973cc;
+  --contrast-color: #ffffff;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+/* Base Styles */
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+  margin: 0;
+  min-height: 100vh;
+  padding-top: 80px; /* 고정 헤더 높이만큼 상단 패딩 추가 */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Responsive Media Queries */
+/* 모바일 (768px 이하) */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+    padding-top: 80px;
+  }
+
+  h1 {
+    font-size: 2.4em;
+  }
+
+  #root {
+    padding: 1rem;
+  }
+}
+
+/* 태블릿 (769px ~ 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    padding: 1.5rem;
+    padding-top: 80px;
+  }
+
+  h1 {
+    font-size: 2.8em;
+  }
+
+  #root {
+    padding: 1.5rem;
+  }
+}
+
+/* 데스크톱 (1025px 이상) */
+@media (min-width: 1025px) {
+  body {
+    padding: 2rem;
+    padding-top: 80px;
+  }
+
+  h1 {
+    font-size: 3.2em;
+  }
+
+  #root {
+    padding: 2rem;
+  }
+}
+
+/* 큰 화면 (1440px 이상) */
+@media (min-width: 1440px) {
+  #root {
+    max-width: 1440px;
+  }
+}

@@ -1,0 +1,28 @@
+/* Footer Styles */
+.footer {
+  padding: 40px 0;
+  background-color: var(--background-color);
+  color: var(--default-color);
+}
+
+.footer .copyright {
+  margin-bottom: 0;
+}
+
+.footer .copyright p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--default-color);
+  font-family: var(--default-font);
+}
+
+/* Dark background variant */
+.footer.dark-background {
+  background-color: var(--background-color);
+  color: var(--default-color);
+}
+
+.footer.dark-background .copyright p {
+  color: var(--default-color);
+}
