@@ -7,7 +7,7 @@
   margin-right: -50vw;
   width: 100vw;
   padding: 15px 0;
-  background-color: #065cc2;
+  background-color: var(--accent-color);
   color: #314862;
   margin-top: auto;
 }

@@ -22,7 +22,7 @@
 }
 
 .logo-image {
-  height: 40px; /* 적당한 크기로 조정 */
+  height: 32px; /* 크기 조금 줄임 */
   width: auto;
 }
 
@@ -197,7 +197,7 @@
 /* Responsive Adjustments */
 @media (max-width: 991.98px) {
   .app-navbar {
-    padding: 0.75rem 0;
+    padding: 0.75rem 1.5rem; /* 좌우 여백 추가 */
   }
 
   .navbar-brand {
