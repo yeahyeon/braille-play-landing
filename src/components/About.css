@@ -1,15 +1,15 @@
 /* About Section Styles */
 .about.section {
-  padding: 80px 0 0 0;
+  padding: var(--header-height) 0 0 0;
 }
 
 /* Section Title */
-.section-title {
+.about .section-title {
   padding-bottom: 60px;
   position: relative;
 }
 
-.section-title h2 {
+.about .section-title h2 {
   font-size: 36px;
   font-weight: 700;
   padding: 0;
@@ -19,7 +19,7 @@
   position: relative;
 }
 
-.section-title h2::after {
+.about .section-title h2::after {
   content: "";
   width: 120px;
   height: 1px;
@@ -28,7 +28,7 @@
   margin: 10px 10px;
 }
 
-.section-title p {
+.about .section-title p {
   color: color-mix(in srgb, var(--default-color), transparent 50%);
   margin: 5px 0 0 0;
   font-size: 16px;
@@ -122,6 +122,7 @@
   gap: 1rem;
   margin-top: 2rem;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .about-actions .btn {
@@ -134,21 +135,15 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  white-space: nowrap;
+  min-width: 160px;
+  flex: 1;
 }
 
 .about-actions .btn.btn-brand {
   background-color: var(--accent-color);
   color: var(--contrast-color);
   border: 2px solid var(--accent-color);
-  padding: 12px 30px;
-  font-weight: 600;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }
 
 .about-actions .btn.btn-brand:hover {
@@ -208,19 +203,19 @@
 /* Responsive */
 @media (max-width: 768px) {
   .about.section {
-    padding: 60px 0 0 0;
+    padding: calc(var(--header-height) * 0.75) 0 0 0;
     margin-bottom: 0;
   }
   
-  .section-title {
+  .about .section-title {
     padding-bottom: 20px;
   }
   
-  .section-title h2 {
+  .about .section-title h2 {
     font-size: 28px;
   }
   
-  .section-title p {
+  .about .section-title p {
     font-size: 14px;
   }
 
@@ -282,16 +277,16 @@
     justify-content: center;
     gap: 0.5rem;
     margin-top: 1.5rem;
+    flex-direction: row;
     flex-wrap: wrap;
   }
 
   .about-actions .btn {
     padding: 0.75rem 1.25rem;
     font-size: 0.9rem;
-    min-width: 9.375rem;
-    max-width: 9.375rem;
-    white-space: nowrap;
+    min-width: 140px;
     flex: 1;
+    white-space: nowrap;
   }
 
   .about-image {
@@ -305,16 +300,16 @@
 
 @media (max-width: 480px) {
   .about-actions {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 0.3rem;
   }
 
   .about-actions .btn {
-    flex: 1;
     font-size: 0.95rem;
     padding: 0.625rem 0.75rem;
-    min-width: 7.5rem;
-    max-width: 7.5rem;
+    min-width: 120px;
+    flex: 1;
     white-space: nowrap;
   }
 }

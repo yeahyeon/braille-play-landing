@@ -11,6 +11,8 @@
   --accent-color: #065cc2;
   --surface-color: #ffffff;
   --contrast-color: #ffffff;
+  
+  --header-height: 80px;
 }
 
 .light-background {
