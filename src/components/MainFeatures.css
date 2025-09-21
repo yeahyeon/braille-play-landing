@@ -1,0 +1,157 @@
+/* Main Features Section Styles */
+.main-features.section {
+  padding: var(--header-height) 0 0 0;
+}
+
+/* Section Title */
+.main-features .section-title {
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.main-features .section-title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  padding: 0;
+  line-height: 1px;
+  margin: 0;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.main-features .section-title h2::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: var(--accent-color);
+  margin: 10px 10px;
+}
+
+.main-features .section-title p {
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  margin: 5px 0 0 0;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--heading-font);
+}
+
+/* Main Features Layout */
+.main-features-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Tab Filters */
+.main-features-tab-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  margin: 0 0 40px;
+  list-style: none;
+}
+
+.main-features-tab-filters li {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 25px;
+  cursor: pointer;
+  background: var(--surface-color);
+  color: var(--default-color);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.main-features-tab-filters li i {
+  font-size: 1.1em;
+  transition: transform 0.3s ease;
+}
+
+.main-features-tab-filters li:hover {
+  color: var(--accent-color);
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+}
+
+.main-features-tab-filters li:hover i {
+  transform: scale(1.1);
+}
+
+.main-features-tab-filters li.main-features-filter-active {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+/* Content Area */
+.main-features-content {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-features-feature-content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.main-features-feature-content h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+  font-family: var(--heading-font);
+}
+
+.main-features-feature-content p {
+  font-size: 1.1rem;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-features.section {
+    padding: calc(var(--header-height) * 0.75) 0 0 0;
+    margin-bottom: 0;
+  }
+  
+  .main-features .section-title {
+    padding-bottom: 40px;
+  }
+  
+  .main-features .section-title h2 {
+    font-size: 28px;
+  }
+  
+  .main-features .section-title p {
+    font-size: 14px;
+  }
+
+  .main-features-tab-filters {
+    gap: 10px;
+  }
+
+  .main-features-tab-filters li {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+
+  .main-features-content {
+    min-height: 300px;
+  }
+
+  .main-features-feature-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .main-features-feature-content p {
+    font-size: 1rem;
+  }
+}
