@@ -300,6 +300,69 @@
   50% { transform: translateY(-20px); }
 }
 
+/* Entrance Animations */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation Classes */
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out both;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out 0.3s both;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+/* Initial state for scroll animations - only when not animated yet */
+.hero-title:not(.slide-in-left),
+.hero-content-wrapper:not(.slide-in-left),
+.hero-image-wrapper:not(.slide-in-right) {
+  opacity: 0;
+}
+
+.hero-title:not(.slide-in-left),
+.hero-content-wrapper:not(.slide-in-left) {
+  transform: translateX(-100px);
+}
+
+.hero-image-wrapper:not(.slide-in-right) {
+  transform: translateX(100px);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
@@ -347,6 +410,7 @@
   .hero-container {
     flex-direction: column;
     gap: 1rem;
+    padding: 0 20px;
   }
   
   .hero-image-wrapper {

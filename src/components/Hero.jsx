@@ -1,37 +1,41 @@
 import React from "react";
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './Hero.css';
 
 const Hero = () => {
+  const titleRef = useScrollAnimation({ animationClass: 'slide-in-left' });
+  const contentRef = useScrollAnimation({ animationClass: 'slide-in-left', rootMargin: '0px 0px -50px 0px' });
+  const imageRef = useScrollAnimation({ animationClass: 'slide-in-right', rootMargin: '0px 0px -50px 0px' });
   return (
     <section id="hero" className="hero section">
       <div className="container">
-        <h1 className="hero-title"><span className="typed">Braille Play</span><br />an intuitive way to learn Braille</h1>
+        <h1 ref={titleRef} className="hero-title"><span className="typed">Braille Play</span><br />an intuitive way to learn Braille</h1>
         
         <div className="hero-container">
-          <div className="hero-content-wrapper">
+          <div ref={contentRef} className="hero-content-wrapper">
             <div className="content-wrapper">
               <p className="lead">Braille Play provides an interactive platform with a 2x4 Braille input device and web content. 
                 Learn Braille easily and accessibly, ultimately increasing awareness and fostering empathy toward the visually impaired.</p>
 
               <div className="hero-actions">
-                <a href="#portfolio" className="btn btn-brand"><i className="bi bi-lightbulb"></i> Start Braille</a>
-                <a href="#contact" className="btn btn-outline">See how it works</a>
+                <a href="https://braille-app-19a76.web.app/" target="_blank" rel="noopener noreferrer" className="btn btn-brand"><i className="bi bi-lightbulb"></i> Start Braille</a>
+                <a href="#main-features" className="btn btn-outline">See how it works</a>
               </div>
             </div>
           </div>
 
-          <div className="hero-image-wrapper">
+          <div ref={imageRef} className="hero-image-wrapper">
             <div className="image-container">
               <div className="floating-elements">
-                <div className="floating-card card-1">
+                <div className="floating-card card-1 fade-in-up" style={{animationDelay: '0.5s'}}>
                   <i className="bi bi-book"></i>
                   <span>Braille Learning</span>
                 </div>
-                <div className="floating-card card-2">
+                <div className="floating-card card-2 fade-in-up" style={{animationDelay: '0.7s'}}>
                   <i className="bi bi-controller"></i>
                   <span>Interactive Play</span>
                 </div>
-                <div className="floating-card card-3">
+                <div className="floating-card card-3 fade-in-up" style={{animationDelay: '0.9s'}}>
                   <i className="bi bi-graph-up"></i>
                   <span>Progress Tracking</span>
                 </div>

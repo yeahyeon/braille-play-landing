@@ -1,7 +1,10 @@
 import React from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './About.css';
 
 const About = () => {
+  const contentRef = useScrollAnimation({ animationClass: 'slide-in-left' });
+  const imageRef = useScrollAnimation({ animationClass: 'slide-in-right' });
   return (
     <section id="about" className="about section">
       {/* Section Title */}
@@ -14,7 +17,7 @@ const About = () => {
       <div className="container">
         <div className="about-container">
           {/* Content Column */}
-          <div className="about-content-wrapper">
+          <div ref={contentRef} className="about-content-wrapper">
             <div className="about-content">
               <h3 className="about-subtitle">Why Braille Play?</h3>
               <p className="about-description">
@@ -65,14 +68,14 @@ const About = () => {
               </div>
 
               <div className="about-actions">
-                <a href="#portfolio" className="btn btn-brand"><i className="bi bi-lightbulb"></i> Start Braille</a>
-                <a href="#contact" className="btn btn-outline">See how it works</a>
+                <a href="https://braille-app-19a76.web.app/" target="_blank" rel="noopener noreferrer" className="btn btn-brand"><i className="bi bi-lightbulb"></i> Start Braille</a>
+                <a href="#main-features" className="btn btn-outline">See how it works</a>
               </div>
             </div>
           </div>
 
           {/* Image Column */}
-          <div className="about-image-wrapper">
+          <div ref={imageRef} className="about-image-wrapper">
             <div className="about-image">
               <img 
                 src="/src/assets/3dkey-logo.png"

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './MainFeatures.css';
 
 const MainFeatures = () => {
@@ -17,6 +18,9 @@ const MainFeatures = () => {
     gameHistory: false,
     badges: false
   });
+
+  const tabsRef = useScrollAnimation({ animationClass: 'fade-in-up' });
+  const contentRef = useScrollAnimation({ animationClass: 'fade-in-up', rootMargin: '0px 0px -50px 0px' });
 
   const tabs = [
     {
@@ -48,8 +52,8 @@ const MainFeatures = () => {
 
       <div className="container-fluid">
         <div className="main-features-layout">
-          {/* Tab Filters */}
-          <ul className="main-features-tab-filters">
+                {/* Tab Filters */}
+                <ul ref={tabsRef} className="main-features-tab-filters">
             {tabs.map((tab) => (
               <li 
                 key={tab.id}
@@ -62,8 +66,8 @@ const MainFeatures = () => {
             ))}
           </ul>
 
-          {/* Content Area */}
-          <div className="main-features-content">
+                {/* Content Area */}
+                <div ref={contentRef} className="main-features-content">
             {activeTab === 'interactive-learning' && (
               <div className="main-features-feature-content active">
                 <div className="interactive-learning-content">

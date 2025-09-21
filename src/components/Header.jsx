@@ -32,12 +32,12 @@ const Header = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#features">
+              <a className="nav-link" href="#main-features">
                 Features
               </a>
             </li>
           </ul>
-          <a className="btn btn-brand ms-lg-3" href="#start">
+          <a className="btn btn-brand ms-lg-3" href="https://braille-app-19a76.web.app/" target="_blank" rel="noopener noreferrer">
             <i className="bi bi-play-circle me-1"></i> Start Braille
           </a>
         </div>
@@ -60,12 +60,12 @@ const Header = () => {
                     </a>
                   </li>
                   <li className="mobile-nav-item">
-                    <a className="mobile-nav-link" href="#features" onClick={closeMenu}>
+                    <a className="mobile-nav-link" href="#main-features" onClick={closeMenu}>
                       Features
                     </a>
                   </li>
                   <li className="mobile-nav-item">
-                    <a className="mobile-nav-link btn btn-brand w-100" href="#start" onClick={closeMenu}>
+                    <a className="mobile-nav-link btn btn-brand w-100" href="https://braille-app-19a76.web.app/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
                       <i className="bi bi-play-circle me-1"></i> Start Braille
                     </a>
                   </li>

@@ -3,6 +3,30 @@
   padding: var(--header-height) 0 4rem 0;
 }
 
+/* Animation Classes */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+/* Initial state for scroll animations - only when not animated yet */
+.main-features-tab-filters:not(.fade-in-up),
+.main-features-content:not(.fade-in-up) {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Entrance Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Section Title */
 .main-features .section-title {
   padding-bottom: 60px;

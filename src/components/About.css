@@ -49,6 +49,52 @@
   gap: 2rem;
 }
 
+/* Animation Classes */
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out both;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out 0.3s both;
+}
+
+/* Initial state for scroll animations - only when not animated yet */
+.about-content-wrapper:not(.slide-in-left),
+.about-image-wrapper:not(.slide-in-right) {
+  opacity: 0;
+}
+
+.about-content-wrapper:not(.slide-in-left) {
+  transform: translateX(-100px);
+}
+
+.about-image-wrapper:not(.slide-in-right) {
+  transform: translateX(100px);
+}
+
+/* Entrance Animations */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .about-content-wrapper {
   flex: 8;
 }
