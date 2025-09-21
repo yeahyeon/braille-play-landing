@@ -155,8 +155,11 @@
 
 .hero .hero-actions .btn.btn-primary:hover,
 .hero .hero-actions .btn.btn-brand:hover {
-  background-color: transparent;
-  color: var(--accent-color);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .hero .hero-actions .btn.btn-outline {
