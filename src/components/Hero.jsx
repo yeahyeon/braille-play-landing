@@ -7,8 +7,8 @@ const Hero = () => {
       <div className="container">
         <h1 className="hero-title"><span className="typed">Braille Play</span><br />an intuitive way to learn Braille</h1>
         
-        <div className="row">
-          <div className="hero-content">
+        <div className="hero-container">
+          <div className="hero-content-wrapper">
             <div className="content-wrapper">
               <p className="lead">Braille Play provides an interactive platform with a 2x4 Braille input device and web content. 
                 Learn Braille easily and accessibly, ultimately increasing awareness and fostering empathy toward the visually impaired.</p>
@@ -20,7 +20,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="hero-image">
+          <div className="hero-image-wrapper">
             <div className="image-container">
               <div className="floating-elements">
                 <div className="floating-card card-1">
@@ -36,7 +36,7 @@ const Hero = () => {
                   <span>Progress Tracking</span>
                 </div>
               </div>
-              <img src="/src/assets/hero-bg.webp" alt="Portfolio Hero" className="img-fluid hero-main-image" />
+              <img src="/src/assets/hero-image.png" alt="Hero Image" className="img-fluid hero-main-image" />
               <div className="image-overlay"></div>
             </div>
           </div>
