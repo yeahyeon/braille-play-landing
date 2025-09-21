@@ -5,6 +5,12 @@ const MainFeatures = () => {
   const [activeTab, setActiveTab] = useState('interactive-learning');
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [currentVideo, setCurrentVideo] = useState('');
+  const [showVideoInfo, setShowVideoInfo] = useState({
+    mov1: false,
+    mov3: false,
+    mov4: false,
+    mov5: false
+  });
 
   const tabs = [
     {
@@ -56,14 +62,23 @@ const MainFeatures = () => {
               <div className="main-features-feature-content active">
                 <div className="interactive-learning-content">
                   <div className="learning-text">
-                    <h3>Interactive Learning</h3>
-                    <p>Experience Braille learning through our interactive platform with hands-on exercises and real-time feedback.</p>
+                    {/* <h3>Interactive Learning</h3> */}
+                    {/* <p>Experience Braille learning through our interactive platform with hands-on exercises and real-time feedback.</p> */}
                   </div>
                   <div className="learning-videos">
-                    <div className="video-container" onClick={() => {
-                      setCurrentVideo('/src/assets/feature-assets/mov1.mp4');
-                      setIsVideoModalOpen(true);
-                    }}>
+                    <div 
+                      className={`video-container ${showVideoInfo.mov1 ? 'show-info' : ''}`}
+                      onMouseEnter={() => setShowVideoInfo(prev => ({ ...prev, mov1: true }))}
+                      onMouseLeave={() => setShowVideoInfo(prev => ({ ...prev, mov1: false }))}
+                      onClick={() => {
+                        if (showVideoInfo.mov1) {
+                          setCurrentVideo('/src/assets/feature-assets/mov1.mp4');
+                          setIsVideoModalOpen(true);
+                        } else {
+                          setShowVideoInfo(prev => ({ ...prev, mov1: true }));
+                        }
+                      }}
+                    >
                       <video 
                         className="feature-video feature-video-1"
                         preload="metadata"
@@ -72,16 +87,37 @@ const MainFeatures = () => {
                         <source src="/src/assets/feature-assets/mov1.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
+                      
+                      {showVideoInfo.mov1 && (
+                        <div className="video-info-overlay">
+                          <h4>Alphabet Learning</h4>
+                          <p>Master the Braille alphabet from A-Z with visual and audio guides.</p>
+                        </div>
+                      )}
+                      
                       <div className="video-overlay">
-                        <div className="play-button">
+                        <div className="play-button" onClick={(e) => {
+                          e.stopPropagation();
+                          setCurrentVideo('/src/assets/feature-assets/mov1.mp4');
+                          setIsVideoModalOpen(true);
+                        }}>
                           <i className="bi bi-play-circle-fill"></i>
                         </div>
                       </div>
                     </div>
-                    <div className="video-container" onClick={() => {
-                      setCurrentVideo('/src/assets/feature-assets/mov3.mp4');
-                      setIsVideoModalOpen(true);
-                    }}>
+                    <div 
+                      className={`video-container ${showVideoInfo.mov3 ? 'show-info' : ''}`}
+                      onMouseEnter={() => setShowVideoInfo(prev => ({ ...prev, mov3: true }))}
+                      onMouseLeave={() => setShowVideoInfo(prev => ({ ...prev, mov3: false }))}
+                      onClick={() => {
+                        if (showVideoInfo.mov3) {
+                          setCurrentVideo('/src/assets/feature-assets/mov3.mp4');
+                          setIsVideoModalOpen(true);
+                        } else {
+                          setShowVideoInfo(prev => ({ ...prev, mov3: true }));
+                        }
+                      }}
+                    >
                       <video 
                         className="feature-video feature-video-3"
                         preload="metadata"
@@ -90,16 +126,37 @@ const MainFeatures = () => {
                         <source src="/src/assets/feature-assets/mov3.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
+                      
+                      {showVideoInfo.mov3 && (
+                        <div className="video-info-overlay">
+                          <h4>Number Learning</h4>
+                          <p>Learn Braille numbers from 0-9.</p>
+                        </div>
+                      )}
+                      
                       <div className="video-overlay">
-                        <div className="play-button">
+                        <div className="play-button" onClick={(e) => {
+                          e.stopPropagation();
+                          setCurrentVideo('/src/assets/feature-assets/mov3.mp4');
+                          setIsVideoModalOpen(true);
+                        }}>
                           <i className="bi bi-play-circle-fill"></i>
                         </div>
                       </div>
                     </div>
-                    <div className="video-container" onClick={() => {
-                      setCurrentVideo('/src/assets/feature-assets/mov4.mp4');
-                      setIsVideoModalOpen(true);
-                    }}>
+                    <div 
+                      className={`video-container ${showVideoInfo.mov4 ? 'show-info' : ''}`}
+                      onMouseEnter={() => setShowVideoInfo(prev => ({ ...prev, mov4: true }))}
+                      onMouseLeave={() => setShowVideoInfo(prev => ({ ...prev, mov4: false }))}
+                      onClick={() => {
+                        if (showVideoInfo.mov4) {
+                          setCurrentVideo('/src/assets/feature-assets/mov4.mp4');
+                          setIsVideoModalOpen(true);
+                        } else {
+                          setShowVideoInfo(prev => ({ ...prev, mov4: true }));
+                        }
+                      }}
+                    >
                       <video 
                         className="feature-video feature-video-4"
                         preload="metadata"
@@ -108,16 +165,37 @@ const MainFeatures = () => {
                         <source src="/src/assets/feature-assets/mov4.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
+                      
+                      {showVideoInfo.mov4 && (
+                        <div className="video-info-overlay">
+                          <h4>Image to Braille</h4>
+                          <p>Identify images and type the corresponding Braille words.</p>
+                        </div>
+                      )}
+                      
                       <div className="video-overlay">
-                        <div className="play-button">
+                        <div className="play-button" onClick={(e) => {
+                          e.stopPropagation();
+                          setCurrentVideo('/src/assets/feature-assets/mov4.mp4');
+                          setIsVideoModalOpen(true);
+                        }}>
                           <i className="bi bi-play-circle-fill"></i>
                         </div>
                       </div>
                     </div>
-                    <div className="video-container" onClick={() => {
-                      setCurrentVideo('/src/assets/feature-assets/mov5.mp4');
-                      setIsVideoModalOpen(true);
-                    }}>
+                    <div 
+                      className={`video-container ${showVideoInfo.mov5 ? 'show-info' : ''}`}
+                      onMouseEnter={() => setShowVideoInfo(prev => ({ ...prev, mov5: true }))}
+                      onMouseLeave={() => setShowVideoInfo(prev => ({ ...prev, mov5: false }))}
+                      onClick={() => {
+                        if (showVideoInfo.mov5) {
+                          setCurrentVideo('/src/assets/feature-assets/mov5.mp4');
+                          setIsVideoModalOpen(true);
+                        } else {
+                          setShowVideoInfo(prev => ({ ...prev, mov5: true }));
+                        }
+                      }}
+                    >
                       <video 
                         className="feature-video feature-video-5"
                         preload="metadata"
@@ -126,8 +204,20 @@ const MainFeatures = () => {
                         <source src="/src/assets/feature-assets/mov5.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
+                      
+                      {showVideoInfo.mov5 && (
+                        <div className="video-info-overlay">
+                          <h4>Math Quiz</h4>
+                          <p>Solve basic arithmetic problems using Braille numbers.</p>
+                        </div>
+                      )}
+                      
                       <div className="video-overlay">
-                        <div className="play-button">
+                        <div className="play-button" onClick={(e) => {
+                          e.stopPropagation();
+                          setCurrentVideo('/src/assets/feature-assets/mov5.mp4');
+                          setIsVideoModalOpen(true);
+                        }}>
                           <i className="bi bi-play-circle-fill"></i>
                         </div>
                       </div>
