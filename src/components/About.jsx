@@ -12,9 +12,9 @@ const About = () => {
       {/* End Section Title */}
 
       <div className="container">
-        <div className="row">
+        <div className="about-container">
           {/* Content Column */}
-          <div className="col-lg-6">
+          <div className="about-content-wrapper">
             <div className="about-content">
               <h3 className="about-subtitle">Why Braille Play?</h3>
               <p className="about-description">
@@ -72,12 +72,13 @@ const About = () => {
           </div>
 
           {/* Image Column */}
-          <div className="col-lg-6">
+          <div className="about-image-wrapper">
             <div className="about-image">
-              <div className="image-placeholder">
-                <i className="bi bi-image"></i>
-                <span>Image will be placed here</span>
-              </div>
+              <img 
+                src="/src/assets/3dkey-logo.png"
+                alt="3D Key Logo"
+                className="about-logo"
+              />
             </div>
           </div>
         </div>
