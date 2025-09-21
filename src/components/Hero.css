@@ -149,9 +149,11 @@
 }
 
 .hero .hero-actions .btn.btn-outline:hover {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  border-color: var(--accent-color);
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+  color: var(--default-color);
+  border-color: color-mix(in srgb, var(--default-color), transparent 70%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Social Links */
@@ -364,6 +366,8 @@
     font-size: 0.95rem;
     padding: 0.625rem 0.75rem;
     min-width: 7.5rem;
+    max-width: 7.5rem;
+    white-space: nowrap;
     display: flex;
     align-items: center;
     justify-content: center;

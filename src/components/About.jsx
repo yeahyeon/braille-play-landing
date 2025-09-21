@@ -63,6 +63,11 @@ const About = () => {
                   </div>
                 </div>
               </div>
+
+              <div className="about-actions">
+                <a href="#portfolio" className="btn btn-brand"><i className="bi bi-lightbulb"></i> Start Braille</a>
+                <a href="#contact" className="btn btn-outline">See how it works</a>
+              </div>
             </div>
           </div>
 
