@@ -24,16 +24,16 @@ const Hero = () => {
             <div className="image-container">
               <div className="floating-elements">
                 <div className="floating-card card-1">
-                  <i className="bi bi-palette"></i>
-                  <span>UI/UX Design</span>
+                  <i className="bi bi-book"></i>
+                  <span>Braille Learning</span>
                 </div>
                 <div className="floating-card card-2">
-                  <i className="bi bi-code-slash"></i>
-                  <span>Development</span>
+                  <i className="bi bi-controller"></i>
+                  <span>Interactive Play</span>
                 </div>
                 <div className="floating-card card-3">
-                  <i className="bi bi-lightning"></i>
-                  <span>Creative Ideas</span>
+                  <i className="bi bi-graph-up"></i>
+                  <span>Progress Tracking</span>
                 </div>
               </div>
               <img src="/src/assets/hero-bg.webp" alt="Portfolio Hero" className="img-fluid hero-main-image" />
