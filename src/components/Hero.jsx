@@ -1,21 +1,13 @@
 import React from "react";
+import './Hero.css';
 
 const Hero = () => {
   return (
-    <section id="hero" className="hero section">
+    <section id="hero" className="hero">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8 text-center">
-            <h1 className="hero-title">Welcome to Braille Play</h1>
-            <p className="hero-subtitle">Learn and practice Braille in an interactive and fun way</p>
-            <div className="hero-buttons">
-              <a href="#about" className="btn btn-primary">
-                Get Started
-              </a>
-              <a href="#contact" className="btn btn-outline-primary">
-                Learn More
-              </a>
-            </div>
+            <h1 className="hero-title">Creative Landing</h1>
           </div>
         </div>
       </div>
