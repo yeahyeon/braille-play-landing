@@ -10,6 +10,7 @@
   background-color: var(--accent-color);
   color: #314862;
   margin-top: auto;
+  margin-bottom: -2rem; /* body 패딩 상쇄 */
 }
 
 .footer .copyright {
