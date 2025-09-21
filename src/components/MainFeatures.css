@@ -1,6 +1,6 @@
 /* Main Features Section Styles */
 .main-features.section {
-  padding: var(--header-height) 0 0 0;
+  padding: var(--header-height) 0 4rem 0;
 }
 
 /* Section Title */
@@ -260,6 +260,74 @@
       transform: scale(1.1);
     }
 
+    /* Progress Tracking Layout */
+    .progress-tracking-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      width: 100%;
+      padding: 0 2rem;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .progress-item {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+      transition: none;
+    }
+
+    .progress-item:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .progress-image-wrapper {
+      flex-shrink: 0;
+      width: 600px;
+      height: 420px;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .progress-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .progress-text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .progress-text h4 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--accent-color);
+      margin-bottom: 0.8rem;
+      font-family: var(--heading-font);
+    }
+
+    .progress-text p {
+      font-size: 0.95rem;
+      color: color-mix(in srgb, var(--default-color), transparent 20%);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* Game History Special Layout */
+    .progress-tracking-content .progress-item.game-history-item {
+      flex-direction: row-reverse !important;
+    }
+
 /* Video Modal Styles */
 .video-modal-overlay {
   position: fixed;
@@ -377,10 +445,10 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .main-features.section {
-    padding: calc(var(--header-height) * 0.75) 0 0 0;
-    margin-bottom: 0;
-  }
+      .main-features.section {
+        padding: calc(var(--header-height) * 0.75) 0 3rem 0;
+        margin-bottom: 0;
+      }
   
   .main-features .section-title {
     padding-bottom: 40px;
@@ -441,6 +509,41 @@
 
       .video-container {
         width: 100%;
+      }
+
+      /* Progress Tracking Mobile */
+      .progress-tracking-content {
+        gap: 3rem;
+        padding: 0 1rem;
+      }
+
+      .progress-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+        gap: 1.5rem;
+      }
+
+      .progress-tracking-content .progress-item.game-history-item {
+        flex-direction: column !important;
+      }
+
+      .progress-image-wrapper {
+        width: 100%;
+        max-width: 500px;
+        height: 320px;
+      }
+
+      .progress-text {
+        text-align: center;
+      }
+
+      .progress-text h4 {
+        font-size: 1.2rem;
+      }
+
+      .progress-text p {
+        font-size: 0.9rem;
       }
 
       .video-info-overlay {

@@ -12,6 +12,11 @@ const MainFeatures = () => {
     mov5: false,
     mov6: false
   });
+  const [showImageInfo, setShowImageInfo] = useState({
+    learningStage: false,
+    gameHistory: false,
+    badges: false
+  });
 
   const tabs = [
     {
@@ -278,12 +283,53 @@ const MainFeatures = () => {
                 </div>
               </div>
             )}
-            {activeTab === 'progress-tracking' && (
-              <div className="main-features-feature-content active">
-                <h3>Progress Tracking</h3>
-                <p>Content for Progress Tracking will be displayed here.</p>
-              </div>
-            )}
+                  {activeTab === 'progress-tracking' && (
+                    <div className="main-features-feature-content active">
+                      <div className="progress-tracking-content">
+                        <div className="progress-item">
+                          <div className="progress-image-wrapper">
+                            <img 
+                              src="/src/assets/feature-assets/my-learning-stage.png"
+                              alt="My Learning Stage"
+                              className="progress-image"
+                            />
+                          </div>
+                          <div className="progress-text">
+                            <h4>My Learning Stage</h4>
+                            <p>Track your mastery of Braille letters and numbers.</p>
+                          </div>
+                        </div>
+
+                        <div className="progress-item game-history-item">
+                          <div className="progress-image-wrapper">
+                            <img 
+                              src="/src/assets/feature-assets/game-history.png"
+                              alt="Game History"
+                              className="progress-image"
+                            />
+                          </div>
+                          <div className="progress-text">
+                            <h4>Game History</h4>
+                            <p>View your scores, rankings, and past game plays.</p>
+                          </div>
+                        </div>
+
+                        <div className="progress-item">
+                          <div className="progress-image-wrapper">
+                            <img 
+                              src="/src/assets/feature-assets/badges-and-achievements.png"
+                              alt="Badges and Achievements"
+                              className="progress-image"
+                            />
+                          </div>
+                          <div className="progress-text">
+                            <h4>Badges & Achievements</h4>
+                            <p>Earn rewards for completing activities and reaching milestones.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
           </div>
         </div>
           </div>
