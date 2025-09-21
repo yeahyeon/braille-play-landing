@@ -9,7 +9,8 @@ const MainFeatures = () => {
     mov1: false,
     mov3: false,
     mov4: false,
-    mov5: false
+    mov5: false,
+    mov6: false
   });
 
   const tabs = [
@@ -228,8 +229,53 @@ const MainFeatures = () => {
             )}
             {activeTab === 'game-zone' && (
               <div className="main-features-feature-content active">
-                <h3>Game Zone</h3>
-                <p>Content for Game Zone will be displayed here.</p>
+                <div className="interactive-learning-content">
+                  <div className="learning-text">
+                    {/* <h3>Game Zone</h3> */}
+                    {/* <p>Content for Game Zone will be displayed here.</p> */}
+                  </div>
+                  <div className="learning-videos">
+                    <div 
+                      className={`video-container ${showVideoInfo.mov6 ? 'show-info' : ''}`}
+                      onMouseEnter={() => setShowVideoInfo(prev => ({ ...prev, mov6: true }))}
+                      onMouseLeave={() => setShowVideoInfo(prev => ({ ...prev, mov6: false }))}
+                      onClick={() => {
+                        if (showVideoInfo.mov6) {
+                          setCurrentVideo('/src/assets/feature-assets/mov6.mp4');
+                          setIsVideoModalOpen(true);
+                        } else {
+                          setShowVideoInfo(prev => ({ ...prev, mov6: true }));
+                        }
+                      }}
+                    >
+                      <video 
+                        className="feature-video feature-video-6"
+                        preload="metadata"
+                        poster="/src/assets/feature-assets/typing-game.png"
+                      >
+                        <source src="/src/assets/feature-assets/mov6.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      
+                      {showVideoInfo.mov6 && (
+                        <div className="video-info-overlay">
+                          <h4>Typing Game</h4>
+                          <p>Improve your Braille typing speed and accuracy by quickly typing random letters and numbers.</p>
+                        </div>
+                      )}
+                      
+                      <div className="video-overlay">
+                        <div className="play-button" onClick={(e) => {
+                          e.stopPropagation();
+                          setCurrentVideo('/src/assets/feature-assets/mov6.mp4');
+                          setIsVideoModalOpen(true);
+                        }}>
+                          <i className="bi bi-play-circle-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
             {activeTab === 'progress-tracking' && (
