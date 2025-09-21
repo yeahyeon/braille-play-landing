@@ -37,8 +37,8 @@ body {
   background-color: var(--background-color);
   font-family: var(--default-font);
   margin: 0;
+  padding: 0;
   min-height: 100vh;
-  padding-top: 80px; /* 고정 헤더 높이만큼 상단 패딩 추가 */
 }
 
 h1,
@@ -86,49 +86,22 @@ button:focus-visible {
 /* Responsive Media Queries */
 /* 모바일 (768px 이하) */
 @media (max-width: 768px) {
-  body {
-    padding: 1rem;
-    padding-top: 80px;
-  }
-
   h1 {
     font-size: 2.4em;
-  }
-
-  #root {
-    padding: 1rem;
   }
 }
 
 /* 태블릿 (769px ~ 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-  body {
-    padding: 1.5rem;
-    padding-top: 80px;
-  }
-
   h1 {
     font-size: 2.8em;
-  }
-
-  #root {
-    padding: 1.5rem;
   }
 }
 
 /* 데스크톱 (1025px 이상) */
 @media (min-width: 1025px) {
-  body {
-    padding: 2rem;
-    padding-top: 80px;
-  }
-
   h1 {
     font-size: 3.2em;
-  }
-
-  #root {
-    padding: 2rem;
   }
 }
 

@@ -1,20 +1,10 @@
 /* Footer Styles */
 .footer {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
+  width: 100%;
   padding: 15px 0;
   background-color: var(--accent-color);
   color: #314862;
-  margin-top: auto;
-  margin-bottom: -2rem; /* body 패딩 상쇄 */
-}
-
-.footer .copyright {
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .footer .copyright p {
