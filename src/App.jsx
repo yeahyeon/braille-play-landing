@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import DeviceSection from "./components/DeviceSection";
 import MainFeatures from "./components/MainFeatures";
+import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
 import "./App.css";
 
@@ -16,6 +17,7 @@ function App() {
         <About />
         <DeviceSection />
         <MainFeatures />
+        <ContactUs />
       </main>
       <Footer />
     </div>
