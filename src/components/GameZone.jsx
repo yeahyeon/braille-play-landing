@@ -2,15 +2,15 @@ import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const GameZone = () => {
-  const gameZoneRef = useScrollAnimation({ animationClass: 'fade-in-up' });
+  const gameZoneRef = useScrollAnimation({ animationClass: 'slide-in-left' });
 
   return (
     <section id="game-zone" className="game-zone-section section">
       <div className="container">
-        <div ref={gameZoneRef} className="main-features-section">
+        <div className="main-features-section">
           <h3 className="main-features-section-title">Game Zone</h3>
           
-          <div className="main-features-content">
+          <div ref={gameZoneRef} className="main-features-content">
             <div className="main-features-video-container">
               <video 
                 className="main-features-video"
