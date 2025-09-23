@@ -218,7 +218,7 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 0.7rem;
+  top: 50%;
   width: 6px;
   height: 6px;
   background-color: var(--accent-color);
@@ -319,7 +319,7 @@
   .main-features-description p::before {
     width: 5px;
     height: 5px;
-    top: 0.65rem;
+    top: 50%;
   }
   
   .game-zone-section.section {
@@ -375,7 +375,7 @@
   .main-features-description p::before {
     width: 4px;
     height: 4px;
-    top: 0.6rem;
+    top: 50%;
   }
   
   .main-features-description h4::after {
