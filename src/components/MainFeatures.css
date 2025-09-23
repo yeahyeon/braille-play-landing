@@ -53,8 +53,9 @@
 
 /* Game Zone Section */
 .game-zone-section.section {
-  padding: 4rem 0;
+  padding: 3rem 0;
   background-color: #f8f9fa;
+  margin: 3rem 0;
 }
 
 /* Main Features Section Title */
@@ -323,6 +324,7 @@
   
   .game-zone-section.section {
     padding: 2rem 0;
+    margin: 2rem 0;
   }
 }
 
@@ -384,5 +386,6 @@
   
   .game-zone-section.section {
     padding: 1.5rem 0;
+    margin: 1.5rem 0;
   }
 }
