@@ -41,6 +41,7 @@ const DeviceSection = () => {
                 controls
                 muted
                 preload="metadata"
+                poster="/src/assets/device/braille-play-poster.png"
               >
                 Your browser does not support the video tag.
               </video>
