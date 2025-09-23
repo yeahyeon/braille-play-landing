@@ -118,11 +118,25 @@ button:focus-visible {
 
 /* Bootstrap Container Override */
 .container {
-  max-width: 100% !important;
-  padding-left: 15px !important;
-  padding-right: 15px !important;
+  max-width: 1400px !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 0.8rem !important;
+    padding-right: 0.8rem !important;
+  }
 }
 
 /* 큰 화면 (1440px 이상) */
