@@ -1,0 +1,148 @@
+/* Device Section Styles */
+.device-section.section {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+/* Device Container */
+.device-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  min-height: auto;
+}
+
+.device-content-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.device-content {
+  width: 100%;
+}
+
+.device-subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+  font-family: var(--heading-font);
+  text-align: left;
+}
+
+.device-description {
+  font-size: 1.1rem;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-family: var(--default-font);
+  text-align: left;
+}
+
+/* Device Media Container */
+.device-media-container {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  padding: 1rem 0;
+}
+
+.media-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.media-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+  font-family: var(--heading-font);
+  text-align: center;
+}
+
+.media-content {
+  width: 100%;
+}
+
+.device-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.device-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.device-video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.device-video:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .device-section.section {
+    padding: 4rem 0;
+  }
+  
+  .device-container {
+    flex-direction: column;
+    gap: 1.5rem;
+    min-height: auto;
+  }
+  
+  .device-content-wrapper {
+    width: 100%;
+    padding: 0 0;
+  }
+  
+  .device-subtitle {
+    font-size: 1.6rem;
+    text-align: left;
+    margin-bottom: 0.3rem;
+  }
+  
+  .device-description {
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 0.8rem;
+  }
+  
+  .device-media-container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+  
+  .media-title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .device-media-container {
+    gap: 1.5rem;
+  }
+  
+  .media-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+  }
+}

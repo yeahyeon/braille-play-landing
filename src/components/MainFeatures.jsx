@@ -13,11 +13,6 @@ const MainFeatures = () => {
     mov5: false,
     mov6: false
   });
-  const [showImageInfo, setShowImageInfo] = useState({
-    learningStage: false,
-    gameHistory: false,
-    badges: false
-  });
 
   const tabsRef = useScrollAnimation({ animationClass: 'fade-in-up' });
   const contentRef = useScrollAnimation({ animationClass: 'fade-in-up', rootMargin: '0px 0px -50px 0px' });
