@@ -37,6 +37,13 @@
 html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -107,6 +114,15 @@ button:focus-visible {
   h1 {
     font-size: 3.2em;
   }
+}
+
+/* Bootstrap Container Override */
+.container {
+  max-width: 100% !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* 큰 화면 (1440px 이상) */
