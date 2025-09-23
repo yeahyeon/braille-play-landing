@@ -3,6 +3,11 @@
   padding: var(--header-height) 0 0 0;
 }
 
+/* MainFeatures는 전역 container 스타일 사용 */
+.main-features .container > .main-features-section {
+  width: 100%;
+  box-sizing: border-box;
+}
 
 /* Section Title */
 .main-features .section-title {
@@ -59,6 +64,7 @@
   margin: 3rem 0;
 }
 
+/* GameZone는 전역 container 스타일 사용 */
 
 /* Main Features Section Title */
 .main-features-section-title {
@@ -228,42 +234,51 @@
   transform: translateY(-50%);
 }
 
-/* Animation Classes */
-.slide-in-left {
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: all 0.6s ease-out;
+/* Animation Classes - MainFeatures 전용 클래스명으로 충돌 방지 */
+.main-features-slide-in-left {
+  opacity: 1;
+  transform: translateX(-100px);
+  transition: all 0.8s ease-out;
 }
 
-.slide-in-left.animate {
+.main-features-slide-in-left.animate {
   opacity: 1;
   transform: translateX(0);
 }
 
-.slide-in-right {
-  opacity: 0;
-  transform: translateX(50px);
-  transition: all 0.6s ease-out;
+.main-features-slide-in-right {
+  opacity: 1;
+  transform: translateX(100px);
+  transition: all 0.8s ease-out;
 }
 
-.slide-in-right.animate {
+.main-features-slide-in-right.animate {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* Mobile Animation Override - 모든 애니메이션을 위로 올라오는 효과로 통일 */
+/* Mobile Animation - 웹화면과 동일한 좌우 날아오는 효과 */
 @media (max-width: 768px) {
-  .slide-in-left,
-  .slide-in-right {
-    opacity: 0;
-    transform: translateY(30px) !important;
-    transition: all 0.6s ease-out;
+  .main-features-slide-in-left {
+    opacity: 1;
+    transform: translateX(-100px) !important;
+    transition: all 0.8s ease-out;
   }
   
-  .slide-in-left.animate,
-  .slide-in-right.animate {
+  .main-features-slide-in-left.animate {
     opacity: 1;
-    transform: translateY(0) !important;
+    transform: translateX(0) !important;
+  }
+  
+  .main-features-slide-in-right {
+    opacity: 1;
+    transform: translateX(100px) !important;
+    transition: all 0.8s ease-out;
+  }
+  
+  .main-features-slide-in-right.animate {
+    opacity: 1;
+    transform: translateX(0) !important;
   }
 }
 
@@ -272,6 +287,8 @@
   .main-features.section {
     padding: calc(var(--header-height) * 0.75) 0 3rem 0;
   }
+  
+  /* 전역 container 스타일 사용 */
   
   .main-features .section-title {
     padding-bottom: 20px;
@@ -370,6 +387,8 @@
 }
 
 @media (max-width: 480px) {
+  /* 전역 container 스타일 사용 */
+  
   .main-features-section {
     margin: 1.5rem 0;
   }

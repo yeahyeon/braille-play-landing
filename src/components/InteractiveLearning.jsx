@@ -2,16 +2,16 @@ import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const InteractiveLearning = () => {
-  const alphabetRef = useScrollAnimation({ animationClass: 'slide-in-left' });
-  const numberRef = useScrollAnimation({ animationClass: 'slide-in-right' });
-  const imageRef = useScrollAnimation({ animationClass: 'slide-in-left' });
-  const mathRef = useScrollAnimation({ animationClass: 'slide-in-right' });
+  const alphabetRef = useScrollAnimation({ animationClass: 'animate' });
+  const numberRef = useScrollAnimation({ animationClass: 'animate' });
+  const imageRef = useScrollAnimation({ animationClass: 'animate' });
+  const mathRef = useScrollAnimation({ animationClass: 'animate' });
 
   return (
     <div className="main-features-section">
       <h3 className="main-features-section-title">Interactive Learning</h3>
       
-      <div ref={alphabetRef} className="main-features-content">
+      <div ref={alphabetRef} className="main-features-content main-features-slide-in-left">
         <div className="main-features-video-container">
           <video 
             className="main-features-video"
@@ -33,7 +33,7 @@ const InteractiveLearning = () => {
         </div>
       </div>
 
-      <div ref={numberRef} className="main-features-content number-learning-content">
+      <div ref={numberRef} className="main-features-content number-learning-content main-features-slide-in-right">
         <div className="main-features-description">
           <h4><i className="fas fa-hashtag"></i> Number Learning</h4>
           <p>Visual and audio representations of numbers.</p>
@@ -55,7 +55,7 @@ const InteractiveLearning = () => {
         </div>
       </div>
 
-      <div ref={imageRef} className="main-features-content">
+      <div ref={imageRef} className="main-features-content main-features-slide-in-left">
         <div className="main-features-video-container">
           <video 
             className="main-features-video"
@@ -77,7 +77,7 @@ const InteractiveLearning = () => {
         </div>
       </div>
 
-      <div ref={mathRef} className="main-features-content math-quiz-content">
+      <div ref={mathRef} className="main-features-content math-quiz-content main-features-slide-in-right">
         <div className="main-features-description">
           <h4><i className="fas fa-plus"></i> Math Quiz</h4>
           <p>Solve simple arithmetic problems using Braille numerals.</p>

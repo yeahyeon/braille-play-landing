@@ -2,7 +2,7 @@ import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const GameZone = () => {
-  const gameZoneRef = useScrollAnimation({ animationClass: 'slide-in-left' });
+  const gameZoneRef = useScrollAnimation({ animationClass: 'animate' });
 
   return (
     <section id="game-zone" className="game-zone-section section">
@@ -10,7 +10,7 @@ const GameZone = () => {
         <div className="main-features-section">
           <h3 className="main-features-section-title">Game Zone</h3>
           
-          <div ref={gameZoneRef} className="main-features-content">
+          <div ref={gameZoneRef} className="main-features-content main-features-slide-in-left">
             <div className="main-features-video-container">
               <video 
                 className="main-features-video"

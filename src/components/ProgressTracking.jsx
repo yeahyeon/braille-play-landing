@@ -2,15 +2,15 @@ import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const ProgressTracking = () => {
-  const stageRef = useScrollAnimation({ animationClass: 'slide-in-left' });
-  const historyRef = useScrollAnimation({ animationClass: 'slide-in-right' });
-  const badgesRef = useScrollAnimation({ animationClass: 'slide-in-left' });
+  const stageRef = useScrollAnimation({ animationClass: 'animate' });
+  const historyRef = useScrollAnimation({ animationClass: 'animate' });
+  const badgesRef = useScrollAnimation({ animationClass: 'animate' });
 
   return (
     <div className="main-features-section">
       <h3 className="main-features-section-title">Progress Tracking</h3>
       
-      <div ref={stageRef} className="main-features-content">
+      <div ref={stageRef} className="main-features-content main-features-slide-in-left">
         <div className="main-features-image-container">
           <img 
             src="/src/assets/feature-assets/my-learning-stage.png"
@@ -27,7 +27,7 @@ const ProgressTracking = () => {
         </div>
       </div>
 
-      <div ref={historyRef} className="main-features-content game-history-content">
+      <div ref={historyRef} className="main-features-content game-history-content main-features-slide-in-right">
         <div className="main-features-description">
           <h4><i className="fas fa-trophy"></i> Game History</h4>
           <p>View your scores, rankings, and past plays.</p>
@@ -44,7 +44,7 @@ const ProgressTracking = () => {
         </div>
       </div>
 
-      <div ref={badgesRef} className="main-features-content">
+      <div ref={badgesRef} className="main-features-content main-features-slide-in-left">
         <div className="main-features-image-container">
           <img 
             src="/src/assets/feature-assets/badges-and-achievements.png"
