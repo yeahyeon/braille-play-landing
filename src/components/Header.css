@@ -54,6 +54,8 @@
 .offcanvas-title {
   color: var(--heading-color);
   font-family: var(--heading-font);
+  font-size: 1.25rem;
+  margin: 0;
 }
 
 /* Navbar Nav Styles */
@@ -195,9 +197,23 @@
 }
 
 /* Responsive Adjustments */
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
   .app-navbar {
-    padding: 0.75rem 1.5rem; /* 좌우 여백 추가 */
+    padding: 0.75rem 0; /* 헤더 자체 좌우 여백 없음 → 전역 .container padding과 일치 */
+  }
+
+  /* 내부 컨테이너 패딩은 전역 .container와 동일 값 유지 (2rem/1.5rem 등)
+     → 전역과 불일치 시 여기서 맞춤 가능 */
+  .app-navbar .container {
+    padding-left: 4rem !important; /* 전역 태블릿 이상 값과 동일 (global.css 참고) */
+    padding-right: 4rem !important;
+  }
+
+  @media (max-width: 768px) {
+    .app-navbar .container {
+      padding-left: 2rem !important; /* global.css 모바일 값과 동기화 */
+      padding-right: 2rem !important;
+    }
   }
 
   .navbar-brand {

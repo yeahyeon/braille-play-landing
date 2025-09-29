@@ -5,7 +5,7 @@
 
 /* Section Title */
 .about .section-title {
-  padding-bottom: 60px;
+  /* padding-bottom: 60px; */
   position: relative;
 }
 
@@ -45,8 +45,22 @@
 /* About Container */
 .about-container {
   display: flex;
-  align-items: center;
-  gap: 2rem;
+  align-items: flex-start;
+  gap: 4rem;
+  padding: 4rem 0 6rem 0; /* 하단 패딩을 6rem으로 증가 */
+  width: 100%;
+  box-sizing: border-box; /* 컨테이너 패딩 포함 계산 */
+  min-height: auto; /* 자동 높이로 변경 */
+}
+
+/* Mobile Layout - Stack vertically */
+@media (max-width: 1199.98px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 4rem 0 6rem 0; /* 태블릿/모바일에서도 하단 패딩 6rem 적용 */
+  }
 }
 
 /* Animation Classes */
@@ -60,7 +74,7 @@
 
 /* Initial state for scroll animations - only when not animated yet */
 .about-content-wrapper:not(.slide-in-left),
-.about-image-wrapper:not(.slide-in-right) {
+.about-features-wrapper:not(.slide-in-right) {
   opacity: 0;
 }
 
@@ -68,7 +82,7 @@
   transform: translateX(-100px);
 }
 
-.about-image-wrapper:not(.slide-in-right) {
+.about-features-wrapper:not(.slide-in-right) {
   transform: translateX(100px);
 }
 
@@ -96,154 +110,185 @@
 }
 
 .about-content-wrapper {
-  flex: 8;
+  flex: 1;
+  width: 100%;
 }
 
-.about-image-wrapper {
-  flex: 4;
+.about-features-wrapper {
+  flex: 1;
+  width: 100%;
+  overflow: visible; /* 카드 그림자가 자연스럽게 보이도록 */
+}
+
+/* Desktop ratio: Left 40% / Right 60% */
+@media (min-width: 1200px) {
+  .about-container {
+    gap: 0; /* 총합이 100%를 넘지 않도록 가로 gap 제거 */
+  }
+  .about-content-wrapper {
+    flex: 0 0 40%;
+    max-width: 40%;
+    padding-right: 2rem; /* 내부 패딩으로 시각적 간격 부여 */
+  }
+
+  .about-features-wrapper {
+    flex: 0 0 60%;
+    max-width: 60%;
+    padding-left: 2rem; /* 내부 패딩으로 시각적 간격 부여 */
+  }
 }
 
 /* About Content */
 .about-content {
-  padding-right: 2rem;
-  padding-top: 2rem;
-  padding-bottom: 4rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 100%;
+  gap: 2rem;
+  width: 100%;
 }
 
-.about-subtitle {
-  font-size: 2rem;
-  font-weight: 600;
+/* Logo Container */
+.about-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.about-logo {
+  height: 300px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Text Content */
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-title {
+  font-size: 2.25rem; /* h2(36px)과 동일 수준으로 축소 */
+  font-weight: 700;
   color: var(--heading-color);
-  margin-bottom: 1.5rem;
+  margin: 0;
   font-family: var(--heading-font);
+  line-height: 1.2;
 }
 
 .about-description {
   font-size: 1.1rem;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   line-height: 1.7;
-  margin-bottom: 3rem;
+  margin: 0;
 }
 
-/* Features List */
-.features-list {
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  row-gap: 1.5rem; /* 카드 간격을 동일하게 조정 */
+  width: 100%;
+  margin: 0;
+  padding: 0; /* grid 자체는 컨테이너 패딩 안쪽에 위치 */
+  box-sizing: border-box; /* padding 계산 포함으로 넘침 방지 */
+  overflow: visible; /* 카드가 잘리지 않도록 변경 */
+}
+
+.feature-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  align-items: flex-start;
+  text-align: left;
+  transition: all 0.3s ease;
+  height: auto; /* 자동 높이로 변경하여 내용이 잘리지 않도록 */
+  min-height: 200px; /* 최소 높이만 설정 */
+  justify-content: center;
+  gap: 1rem;
 }
 
-.feature-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Staggered layout (desktop): 상하가 다른 정렬 */
+@media (min-width: 1200px) {
+  .features-grid .feature-card:nth-child(1) {
+    transform: translateY(0);
+  }
+  .features-grid .feature-card:nth-child(2) {
+    transform: translateY(32px);
+  }
+  .features-grid .feature-card:nth-child(3) {
+    transform: translateY(16px);
+  }
+  .features-grid .feature-card:nth-child(4) {
+    transform: translateY(48px);
+  }
+}
+
+/* Tablet breakpoint: 768px–1199.98px에서도 상하 변주 적용 */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .features-grid .feature-card:nth-child(1) {
+    transform: translateY(0);
+  }
+  .features-grid .feature-card:nth-child(2) {
+    transform: translateY(24px);
+  }
+  .features-grid .feature-card:nth-child(3) {
+    transform: translateY(12px);
+  }
+  .features-grid .feature-card:nth-child(4) {
+    transform: translateY(36px);
+  }
 }
 
 .feature-icon {
-  flex-shrink: 0;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 20%));
-  border-radius: 15px;
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  min-height: 80px;
+  max-width: 80px;
+  max-height: 80px;
+  background: linear-gradient(135deg, #4a90e2, #7bb3f0);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 80%);
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+  flex-shrink: 0;
 }
 
 .feature-icon i {
-  font-size: 1.8rem;
-  color: var(--contrast-color);
+  font-size: 2.5rem;
+  color: #ffffff;
 }
 
 .feature-content h4 {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: var(--heading-color);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   font-family: var(--heading-font);
 }
 
-  .feature-content p {
-    font-size: 1rem;
-    color: color-mix(in srgb, var(--default-color), transparent 30%);
-    line-height: 1.6;
-    margin: 0;
-  }
-
-/* About Actions */
-.about-actions {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1rem;
-  margin-top: 2rem;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-.about-actions .btn {
-  padding: 12px 30px;
-  font-weight: 600;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  white-space: nowrap;
-  min-width: 160px;
-  flex: 1;
-}
-
-.about-actions .btn.btn-brand {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  border: 2px solid var(--accent-color);
-}
-
-.about-actions .btn.btn-brand:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
-  color: #ffffff;
-  text-decoration: none;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.about-actions .btn.btn-outline {
-  background-color: transparent;
-  color: var(--default-color);
-  border: 2px solid color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.about-actions .btn.btn-outline:hover {
-  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
-  color: var(--default-color);
-  border-color: color-mix(in srgb, var(--default-color), transparent 70%);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* About Image */
-.about-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 0.5rem;
-  height: 100%;
-}
-
-.about-logo {
-  width: 100%;
-  height: auto;
-  max-width: 300px;
-  object-fit: contain;
-  border-radius: 20px;
+.feature-content p {
+  font-size: 1.1rem;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Responsive */
@@ -254,28 +299,29 @@
   }
 
   .about-container {
-    flex-direction: column;
-    gap: 2rem;
+    padding: 3rem 0;
   }
 
   .about-content-wrapper {
-    flex: none;
+    max-width: 100%;
     width: 100%;
+    flex: none;
   }
 
-  .about-image-wrapper {
-    flex: none;
+  .about-features-wrapper {
+    max-width: 100%;
     width: 100%;
+    flex: none;
   }
-  
+
   .about .section-title {
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
   }
-  
+
   .about .section-title h2 {
     font-size: 28px;
   }
-  
+
   .about .section-title p {
     font-size: 14px;
   }
@@ -286,91 +332,113 @@
   }
 
   .about-content {
-    padding-right: 0;
-    padding-top: 1.5rem;
-    padding-bottom: 3rem;
-    margin-bottom: 3rem;
-    height: auto;
     text-align: center;
+    gap: 1.5rem;
   }
 
-  .about-subtitle {
-    font-size: 1.6rem;
-    text-align: left;
+  .about-title {
+    font-size: 2rem;
   }
 
   .about-description {
     font-size: 1rem;
-    text-align: left;
-    margin-bottom: 2rem;
   }
 
-  .features-list {
-    gap: 1.5rem;
-  }
-
-  .feature-item {
-    flex-direction: row;
-    text-align: left;
+  .features-grid {
+    grid-template-columns: 1fr;
     gap: 1rem;
-    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+
+  .feature-card {
+    padding: 2rem; /* 좌우만 유지, 상하 제거 */
+    height: auto; /* 모바일에서는 내용 높이에 맞춤 */
   }
 
   .feature-icon {
-    width: 50px;
-    height: 50px;
+    width: 80px; /* 화면 크기와 무관하게 고정 */
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    max-width: 80px;
+    max-height: 80px;
+    background: linear-gradient(135deg, #4a90e2, #7bb3f0);
+    box-shadow: 0 3px 8px rgba(74, 144, 226, 0.3);
     flex-shrink: 0;
+    margin-bottom: 0.25rem; /* 아이콘-제목 간격 축소 */
   }
 
   .feature-icon i {
-    font-size: 1.5rem;
+    font-size: 2.5rem; /* 고정 */
+    color: #ffffff;
   }
 
   .feature-content h4 {
+    font-size: 1.2rem;
+  }
+
+  .feature-content p {
     font-size: 1rem;
+  }
+
+  .about-logo {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .about-title {
+    font-size: 1.75rem;
+  }
+
+  .about-description {
+    font-size: 0.95rem;
+  }
+
+  .features-grid {
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .feature-card {
+    padding: 2rem; /* 좌우만 유지, 상하 제거 */
+    height: auto; /* 초소형 화면에서도 자동 높이 */
+  }
+
+  .feature-icon {
+    width: 80px; /* 화면 크기와 무관하게 고정 */
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    max-width: 80px;
+    max-height: 80px;
+    background: linear-gradient(135deg, #4a90e2, #7bb3f0);
+    box-shadow: 0 2px 6px rgba(74, 144, 226, 0.3);
+    flex-shrink: 0;
+    margin-bottom: 0.2rem; /* 초소형에서 더 좁게 */
+  }
+
+  .feature-icon i {
+    font-size: 2.5rem; /* 고정 */
+    color: #ffffff;
+  }
+
+  .feature-content h4 {
+    font-size: 1.1rem;
   }
 
   .feature-content p {
     font-size: 0.95rem;
   }
 
-  .about-actions {
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .about-actions .btn {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.9rem;
-    min-width: 140px;
-    flex: 1;
-    white-space: nowrap;
-  }
-
-  .about-image {
-    padding-left: 0;
-  }
-
   .about-logo {
-    max-width: 250px;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-actions {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-  }
-
-  .about-actions .btn {
-    font-size: 0.95rem;
-    padding: 0.625rem 0.75rem;
-    min-width: 120px;
-    flex: 1;
-    white-space: nowrap;
+    height: 150px;
   }
 }

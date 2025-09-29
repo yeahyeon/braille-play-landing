@@ -46,15 +46,15 @@
   font-size: 1.1rem;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
+  text-align: center;
 }
 
 /* Contact Content */
 .contact-content {
   margin-top: 2rem;
 }
-
 
 /* Contact Form */
 .contact-form h3 {
@@ -117,15 +117,15 @@
     padding: 2rem;
     margin: 1rem;
   }
-  
+
   .contact-title h2 {
     font-size: 2rem;
   }
-  
+
   .contact-title p {
     font-size: 1rem;
   }
-  
+
   .contact-form h3 {
     font-size: 1.3rem;
   }
@@ -136,24 +136,24 @@
     padding: 1.5rem;
     margin: 0.5rem;
   }
-  
+
   .contact-title h2 {
     font-size: 1.8rem;
   }
-  
+
   .contact-title p {
     font-size: 0.95rem;
   }
-  
+
   .contact-form h3 {
     font-size: 1.2rem;
   }
-  
+
   .form-control {
     padding: 0.6rem 0.8rem;
     font-size: 0.9rem;
   }
-  
+
   .btn-primary {
     padding: 0.6rem 1.5rem;
     font-size: 0.9rem;

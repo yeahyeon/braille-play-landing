@@ -1,47 +1,73 @@
 import React from "react";
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import './Hero.css';
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import "./Hero.css";
 
 const Hero = () => {
-  const titleRef = useScrollAnimation({ animationClass: 'slide-in-left' });
-  const contentRef = useScrollAnimation({ animationClass: 'slide-in-left', rootMargin: '0px 0px -50px 0px' });
-  const imageRef = useScrollAnimation({ animationClass: 'slide-in-right', rootMargin: '0px 0px -50px 0px' });
+  const titleRef = useScrollAnimation({ animationClass: "slide-in-left" });
+  const contentRef = useScrollAnimation({ animationClass: "slide-in-left", rootMargin: "0px 0px -50px 0px" });
+  const imageRef = useScrollAnimation({ animationClass: "slide-in-right", rootMargin: "0px 0px -50px 0px" });
   return (
     <section id="hero" className="hero section">
       <div className="container">
-        <h1 ref={titleRef} className="hero-title"><span className="typed">Braille Play</span><br />an intuitive way to learn Braille</h1>
-        
         <div className="hero-container">
           <div ref={contentRef} className="hero-content-wrapper">
             <div className="content-wrapper">
-              <p className="lead">Braille Play provides an interactive platform with a 2x4 Braille input device and web content. 
-                Learn Braille easily and accessibly, ultimately increasing awareness and fostering empathy toward the visually impaired.</p>
+              <h1 ref={titleRef} className="hero-title">
+                <span className="typed">Braille Play</span>
+                <br />
+                an intuitive way to learn Braille
+              </h1>
+
+              <p className="lead">Start playing and bridge the gap in awareness with our interactive web platform.</p>
 
               <div className="hero-actions">
-                <a href="https://braille-app-19a76.web.app/" target="_blank" rel="noopener noreferrer" className="btn btn-brand"><i className="bi bi-lightbulb"></i> Start Braille</a>
-                <a href="#main-features" className="btn btn-outline">See how it works</a>
+                <a
+                  href="https://braille-app-19a76.web.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-brand"
+                >
+                  <i className="bi bi-play-circle"></i> Start Braille
+                </a>
+                <a href="#main-features" className="btn btn-outline">
+                  See how it works
+                </a>
               </div>
             </div>
           </div>
 
           <div ref={imageRef} className="hero-image-wrapper">
-            <div className="image-container">
-              <div className="floating-elements">
-                <div className="floating-card card-1 fade-in-up" style={{animationDelay: '0.5s'}}>
-                  <i className="bi bi-book"></i>
-                  <span>Braille Learning</span>
-                </div>
-                <div className="floating-card card-2 fade-in-up" style={{animationDelay: '0.7s'}}>
-                  <i className="bi bi-controller"></i>
-                  <span>Interactive Play</span>
-                </div>
-                <div className="floating-card card-3 fade-in-up" style={{animationDelay: '0.9s'}}>
-                  <i className="bi bi-graph-up"></i>
-                  <span>Progress Tracking</span>
+            <div className="laptop-frame">
+              <div className="laptop-screen">
+                <div className="screen-content">
+                  <div className="browser-header">
+                    <div className="browser-dots">
+                      <span className="dot red"></span>
+                      <span className="dot yellow"></span>
+                      <span className="dot green"></span>
+                    </div>
+                    <div className="browser-url">braille-play.com</div>
+                  </div>
+                  <div className="web-content">
+                    <div className="floating-elements">
+                      <div className="floating-card card-1 fade-in-up" style={{ animationDelay: "0.5s" }}>
+                        <i className="bi bi-book"></i>
+                        <span>Braille Learning</span>
+                      </div>
+                      <div className="floating-card card-2 fade-in-up" style={{ animationDelay: "0.7s" }}>
+                        <i className="bi bi-controller"></i>
+                        <span>Interactive Play</span>
+                      </div>
+                      <div className="floating-card card-3 fade-in-up" style={{ animationDelay: "0.9s" }}>
+                        <i className="bi bi-graph-up"></i>
+                        <span>Progress Tracking</span>
+                      </div>
+                    </div>
+                    <img src="/src/assets/hero-image.png" alt="Hero Image" className="img-fluid hero-main-image" />
+                    <div className="image-overlay"></div>
+                  </div>
                 </div>
               </div>
-              <img src="/src/assets/hero-image.png" alt="Hero Image" className="img-fluid hero-main-image" />
-              <div className="image-overlay"></div>
             </div>
           </div>
         </div>

@@ -14,7 +14,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg fixed-top app-navbar">
+    <nav className="navbar navbar-expand-xl fixed-top app-navbar">
       <div className="container">
         <a className="navbar-brand d-flex align-items-center gap-2" href="/" aria-label="Braille Play home">
           <img src={BraillePlayLogo} alt="Braille Play" className="logo-image" />
@@ -24,8 +24,8 @@ const Header = () => {
         </button>
 
         {/* Desktop Menu */}
-        <div className="d-none d-lg-flex align-items-center">
-          <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+        <div className="d-none d-xl-flex align-items-center">
+          <ul className="navbar-nav ms-auto align-items-xl-center gap-xl-3">
             <li className="nav-item">
               <a className="nav-link" href="#about">
                 About
@@ -37,7 +37,12 @@ const Header = () => {
               </a>
             </li>
           </ul>
-          <a className="btn btn-brand ms-lg-3" href="https://braille-app-19a76.web.app/" target="_blank" rel="noopener noreferrer">
+          <a
+            className="btn btn-brand ms-xl-3"
+            href="https://braille-app-19a76.web.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="bi bi-play-circle me-1"></i> Start Braille
           </a>
         </div>
@@ -65,7 +70,13 @@ const Header = () => {
                     </a>
                   </li>
                   <li className="mobile-nav-item">
-                    <a className="mobile-nav-link btn btn-brand w-100" href="https://braille-app-19a76.web.app/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
+                    <a
+                      className="mobile-nav-link btn btn-brand w-100"
+                      href="https://braille-app-19a76.web.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={closeMenu}
+                    >
                       <i className="bi bi-play-circle me-1"></i> Start Braille
                     </a>
                   </li>
