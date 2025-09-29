@@ -3,51 +3,56 @@ import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import "./DeviceSection.css";
 
 const DeviceSection = () => {
-  const contentRef = useScrollAnimation({ animationClass: "slide-in-left" });
-  const mediaRef = useScrollAnimation({ animationClass: "fade-in-up" });
+  const imageRef = useScrollAnimation({ animationClass: "slide-in-left" });
+  const contentRef = useScrollAnimation({ animationClass: "slide-in-right" });
+  const videoRef = useScrollAnimation({ animationClass: "fade-in-up" });
 
   return (
     <section id="device-section" className="device-section section">
       <div className="container">
-        <div className="device-container">
-          <div ref={contentRef} className="device-content-wrapper">
-            <div className="device-content">
-              <div className="section-title">
-                <h2>The Braille Play Device</h2>
-              </div>
-              <p className="device-description">
-                The Braille Play device provides tactile feedback as you interact with it, creating a more engaging and
-                immersive learning experience. It integrates directly with our web content, enabling you to input
-                Braille characters and receive immediate visual or tactile feedback, ensuring you're entering the
-                correct symbols. This seamless digital integration allows you to practice and apply what you've learned
-                in real-time, reinforcing your skills with every input.
-              </p>
+        {/* 최상단 제목 */}
+        <div className="device-section-title">
+          <h2>The Braille Play Device</h2>
+        </div>
+
+        {/* 상단 부분: 왼쪽 이미지, 오른쪽 설명 */}
+        <div className="device-top-section">
+          <div ref={imageRef} className="device-image-container">
+            <div className="photo-stack">
+              <figure className="photo p1">
+                <img src="/src/assets/device/braille-hw.jpg" alt="The Braille Play 2x4 Device" className="device-image" />
+              </figure>
+              <figure className="photo p2">
+                <img src="/src/assets/device/braille-hw2.jpg" alt="The Braille Play 2x4 Device" className="device-image" />
+              </figure>
             </div>
+          </div>
+          
+          <div ref={contentRef} className="device-content">
+            <p className="device-description">
+              The Braille Play device provides tactile feedback as you interact with it, creating a more engaging and
+              immersive learning experience. It integrates directly with our web content, enabling you to input
+              Braille characters and receive immediate visual or tactile feedback, ensuring you're entering the
+              correct symbols. This seamless digital integration allows you to practice and apply what you've learned
+              in real-time, reinforcing your skills with every input.
+            </p>
           </div>
         </div>
 
-        <div ref={mediaRef} className="device-media-container">
-          <div className="media-item">
-            <h4 className="media-title">The Braille Play 2x4 Device</h4>
-            <div className="media-content">
-              <img src="/src/assets/device/braille-hw.jpg" alt="The Braille Play 2x4 Device" className="device-image" />
-            </div>
-          </div>
-
-          <div className="media-item">
-            <h4 className="media-title">Web Content in Action</h4>
-            <div className="media-content">
-              <video
-                src="/src/assets/device/braille-play.mp4"
-                className="device-video"
-                controls
-                muted
-                preload="metadata"
-                poster="/src/assets/device/braille-play-poster.png"
-              >
-                Your browser does not support the video tag.
-              </video>
-            </div>
+        {/* 하단 부분: Web Content in Action 제목과 비디오 */}
+        <div ref={videoRef} className="device-bottom-section">
+          <h3 className="video-title">Web Content in Action</h3>
+          <div className="video-container">
+            <video
+              src="/src/assets/device/braille-play.mp4"
+              className="device-video"
+              controls
+              muted
+              preload="metadata"
+              poster="/src/assets/device/braille-play-poster.png"
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>

@@ -4,28 +4,13 @@
   background-color: #f8f9fa;
 }
 
-/* Device Container */
-.device-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  min-height: auto;
+/* 최상단 제목 */
+.device-section-title {
+  text-align: left;
+  margin-bottom: 3rem;
 }
 
-.device-content-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.device-content {
-  width: 100%;
-}
-
-/* About 섹션과 동일한 제목 스타일 적용 */
-.device-content .section-title h2 {
+.device-section-title h2 {
   font-size: 36px;
   font-weight: 700;
   padding: 0;
@@ -35,10 +20,10 @@
   position: relative;
   color: var(--heading-color);
   font-family: var(--heading-font);
-  text-align: left;
+  display: inline-block;
 }
 
-.device-content .section-title h2::after {
+.device-section-title h2::after {
   content: "";
   width: 120px;
   height: 1px;
@@ -47,9 +32,20 @@
   margin: 10px 10px;
 }
 
-/* 제목과 설명 사이 간격 추가 */
-.device-content .section-title {
-  margin-bottom: 3rem; /* 간격 확대 */
+/* 상단 부분: 왼쪽 이미지, 오른쪽 설명 */
+.device-top-section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 15rem;
+}
+
+.device-image-container {
+  flex: 1;
+}
+
+.device-content {
+  flex: 1;
 }
 
 .device-description {
@@ -61,44 +57,82 @@
   text-align: left;
 }
 
-/* Device Media Container */
-.device-media-container {
-  display: flex;
-  gap: 3rem;
-  align-items: flex-start;
-  padding: 1rem 0;
-}
-
-.media-item {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.media-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--heading-color);
-  margin-bottom: 1rem;
-  font-family: var(--heading-font);
-  text-align: center;
-}
-
-.media-content {
+/* 겹치는 이미지 스택 */
+.photo-stack {
+  position: relative;
   width: 100%;
+  height: 320px;
 }
 
-.device-image {
+.photo {
+  position: absolute;
+  margin: 0;
+  transition: transform 0.3s ease;
+}
+
+.photo img {
   width: 100%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
+  display: block;
+  border: 2px solid #000000;
 }
 
-.device-image:hover {
-  transform: translateY(-5px);
+.photo.p1 {
+  top: 100px;
+  left: 140px;
+  width: 65%;
+  z-index: 1;
+}
+
+.photo.p2 {
+  top: 0;
+  left: 0;
+  width: 45%;
+  z-index: 2;
+}
+
+.photo-stack:hover .photo.p1 {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.photo-stack:hover .photo.p2 {
+  transform: translateY(-3px) scale(1.01);
+}
+
+.photo.p1 img {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.photo.p2 img {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* 하단 부분: Web Content in Action 제목과 비디오 */
+.device-bottom-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.video-title::after {
+  display: none;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 800px;
 }
 
 .device-video {
@@ -117,51 +151,110 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .device-section.section {
-    padding: 4rem 0;
+    padding: 3rem 0;
   }
 
-  .device-container {
+  /* 최상단 제목 크기 조정 */
+  .device-section-title h2 {
+    font-size: 28px;
+  }
+
+  /* 모바일에서 상하 정렬 */
+  .device-top-section {
     flex-direction: column;
-    gap: 1.5rem;
-    min-height: auto;
+    gap: 2rem;
+    margin-bottom: 5rem;
   }
 
-  .device-content-wrapper {
-    width: 100%;
-    padding: 0 0;
+  .device-image-container {
+    order: 1;
   }
 
-  .device-subtitle {
-    font-size: 1.6rem;
-    text-align: left;
-    margin-bottom: 0.3rem;
+  .device-content {
+    order: 2;
   }
 
+  .device-bottom-section {
+    order: 3;
+  }
+
+  /* 모바일에서 이미지 스택 조정 */
+  .photo-stack {
+    height: auto;
+    min-height: 250px;
+  }
+
+  .photo.p1 {
+    width: 300px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+  }
+
+  .photo.p2 {
+    display: none;
+  }
+
+  .video-title {
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+  }
+
+  /* 설명 텍스트 크기 조정 */
   .device-description {
     font-size: 1rem;
     text-align: left;
-    margin-bottom: 0.8rem;
   }
 
-  .device-media-container {
-    flex-direction: column;
-    gap: 2rem;
-    padding: 1rem 0;
-  }
-
-  .media-title {
-    font-size: 1.2rem;
-    text-align: center;
+  /* 비디오 컨테이너 조정 */
+  .video-container {
+    max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
-  .device-media-container {
-    gap: 1.5rem;
+  .device-section.section {
+    padding: 2rem 0;
   }
 
-  .media-title {
+  .device-top-section {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .device-section-title h2 {
+    font-size: 24px;
+  }
+
+  .video-title {
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+
+  .device-description {
     font-size: 0.95rem;
-    margin-bottom: 0.8rem;
+  }
+
+  .device-content .section-title {
+    margin-bottom: 2rem;
+  }
+
+  /* 작은 모바일에서 이미지 스택 추가 조정 */
+  .photo-stack {
+    height: auto;
+    min-height: 200px;
+  }
+
+  .photo.p1 {
+    width: 300px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+  }
+
+  .photo.p2 {
+    display: none;
   }
 }
