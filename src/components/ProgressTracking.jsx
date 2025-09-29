@@ -1,63 +1,61 @@
 import React from 'react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const ProgressTracking = () => {
-  const stageRef = useScrollAnimation({ animationClass: 'animate' });
-  const historyRef = useScrollAnimation({ animationClass: 'animate' });
-  const badgesRef = useScrollAnimation({ animationClass: 'animate' });
-
   return (
     <div className="main-features-section">
       <h3 className="main-features-section-title">Progress Tracking</h3>
       
-      <div ref={stageRef} className="main-features-content main-features-slide-in-left">
-        <div className="main-features-image-container">
-          <img 
-            src="/src/assets/feature-assets/my-learning-stage.png"
-            alt="My Learning Stage"
-            className="main-features-image"
-          />
-        </div>
+      <div className="progress-tracking-description">
+        <p className="section-description">Track progress and celebrate achievements to stay motivated.</p>
         
-        <div className="main-features-description">
-          <h4><i className="fas fa-chart-line"></i> My Learning Stage</h4>
-          <p>Track your mastery of letters and numbers.</p>
-          <p>Monitor your learning progress.</p>
-          <p>Provides a sense of accomplishment.</p>
-        </div>
+        <ul className="feature-list">
+          <li>
+            <i className="fas fa-chart-line"></i>
+            <div className="feature-item">
+              <h4>My Learning Stage</h4>
+              <p>Monitor mastery of letters and numbers.</p>
+            </div>
+          </li>
+          <li>
+            <i className="fas fa-trophy"></i>
+            <div className="feature-item">
+              <h4>Game History</h4>
+              <p>Review scores, rankings, and past plays.</p>
+            </div>
+          </li>
+          <li>
+            <i className="fas fa-star"></i>
+            <div className="feature-item">
+              <h4>Badges & Achievements</h4>
+              <p>Earn rewards for completing activities and milestones.</p>
+            </div>
+          </li>
+        </ul>
       </div>
 
-      <div ref={historyRef} className="main-features-content game-history-content main-features-slide-in-right">
-        <div className="main-features-description">
-          <h4><i className="fas fa-trophy"></i> Game History</h4>
-          <p>View your scores, rankings, and past plays.</p>
-          <p>Analyze your performance to see where you can improve.</p>
-          <p>Promotes friendly competition with leaderboards.</p>
+      <div className="progress-tracking-images-container">
+        <div className="laptop-frame-small">
+          <div className="laptop-screen-small">
+            <div className="screen-content-small">
+              <img src="/src/assets/feature-assets/my-learning-stage.png" alt="My Learning Stage" className="interactive-gif" />
+            </div>
+          </div>
         </div>
         
-        <div className="main-features-image-container">
-          <img 
-            src="/src/assets/feature-assets/game-history.png"
-            alt="Game History"
-            className="main-features-image"
-          />
-        </div>
-      </div>
-
-      <div ref={badgesRef} className="main-features-content main-features-slide-in-left">
-        <div className="main-features-image-container">
-          <img 
-            src="/src/assets/feature-assets/badges-and-achievements.png"
-            alt="Badges and Achievements"
-            className="main-features-image"
-          />
+        <div className="laptop-frame-small">
+          <div className="laptop-screen-small">
+            <div className="screen-content-small">
+              <img src="/src/assets/feature-assets/game-history.png" alt="Game History" className="interactive-gif" />
+            </div>
+          </div>
         </div>
         
-        <div className="main-features-description">
-          <h4><i className="fas fa-star"></i> Badges & Achievements</h4>
-          <p>Earn rewards for completing activities and milestones.</p>
-          <p>A motivational system for students.</p>
-          <p>Provides a sense of accomplishment and encourages continued learning.</p>
+        <div className="laptop-frame-small">
+          <div className="laptop-screen-small">
+            <div className="screen-content-small">
+              <img src="/src/assets/feature-assets/badges-and-achievements.png" alt="Badges & Achievements" className="interactive-gif" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

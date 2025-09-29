@@ -1,6 +1,7 @@
 /* Main Features Section Styles */
 .main-features.section {
   padding: var(--header-height) 0 0 0;
+  background-color: #ffffff;
 }
 
 /* MainFeatures는 전역 container 스타일 사용 */
@@ -45,6 +46,7 @@
 /* Main Features Section */
 .main-features-section {
   margin: 3rem 0;
+  background-color: #ffffff;
 }
 
 /* Interactive Learning Section - 상하 여백 균등 */
@@ -60,7 +62,7 @@
 /* Game Zone Section */
 .game-zone-section.section {
   padding: 3rem 0;
-  background-color: #f8f9fa;
+  background-color: #ffffff;
   margin: 3rem 0;
 }
 
@@ -71,11 +73,190 @@
   font-size: 2rem;
   font-weight: 600;
   color: var(--heading-color);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-family: var(--heading-font);
   text-align: left;
   position: relative;
   padding-left: 1.5rem;
+}
+
+/* Interactive Learning Description */
+.interactive-learning-description {
+  margin-bottom: 3rem;
+  padding-left: 1.5rem;
+}
+
+/* Game Zone Description */
+.game-zone-description {
+  margin-bottom: 3rem;
+  padding-left: 1.5rem;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-family: var(--default-font);
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list li {
+  font-size: 1rem;
+  color: var(--default-color);
+  margin-bottom: 1.5rem;
+  font-family: var(--default-font);
+  display: flex;
+  align-items: stretch;
+}
+
+.feature-list li i {
+  margin-right: 1.5rem;
+  color: #ffffff;
+  font-size: 1.1rem;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 30%), color-mix(in srgb, var(--accent-color), transparent 60%));
+  border-radius: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.feature-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature-list li h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 0 0 0.5rem 0;
+  font-family: var(--heading-font);
+}
+
+.feature-list li p {
+  font-size: 1.1rem;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: 0;
+  line-height: 1.5;
+  font-family: var(--default-font);
+}
+
+/* Interactive GIFs Container */
+.interactive-gifs-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding: 0;
+  width: 100%;
+}
+
+/* Game Zone GIFs Container */
+.game-zone-gifs-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 0;
+  width: 100%;
+}
+
+/* Progress Tracking Images Container */
+.progress-tracking-images-container {
+  display: flex;
+  gap: 0.8rem; /* gap을 0.5rem에서 0.8rem으로 증가 */
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding: 0;
+  width: 100%;
+}
+
+/* Progress Tracking laptop frame - 기본 스타일 사용 */
+
+/* Progress Tracking 이미지 비율 유지 설정 */
+.progress-tracking-images-container .interactive-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 원본 비율 유지 */
+  object-position: center;
+  border-radius: 5px;
+}
+
+/* Game Zone specific frame sizing - Desktop only */
+@media (min-width: 769px) {
+  .game-zone-gifs-container .laptop-frame-small {
+    flex: 0 0 390px; /* Increased width to 390px */
+    max-width: 390px;
+  }
+}
+
+/* Mobile and tablet - keep Interactive Learning style */
+@media (max-width: 768px) {
+  .game-zone-gifs-container .laptop-frame-small {
+    flex: 1;
+    max-width: none;
+  }
+}
+
+/* Small Laptop Frame */
+.laptop-frame-small {
+  position: relative;
+  flex: 1;
+  background: #2c2c2c;
+  border-radius: 12px 12px 6px 6px;
+  padding: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.laptop-frame-small:hover {
+  transform: translateY(-3px);
+}
+
+.laptop-screen-small {
+  background: #000;
+  border-radius: 8px;
+  padding: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.screen-content-small {
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 250px;
+  position: relative;
+}
+
+.interactive-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+
+/* Game Zone specific GIF styling - same as Interactive Learning */
+.game-zone-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
 }
 
 .main-features-section-title::before {
@@ -234,7 +415,7 @@
   transform: translateY(-50%);
 }
 
-/* Animation Classes - MainFeatures 전용 클래스명으로 충돌 방지 */
+/* Animation Classes - MainFeatures 전용 클래스ㅇ명으로 충돌 방지 */
 .main-features-slide-in-left {
   opacity: 1;
   transform: translateX(-100px);
@@ -316,9 +497,76 @@
   
   .main-features-section-title {
     font-size: 1.6rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     text-align: left;
     padding-left: 1.2rem;
+  }
+
+  .interactive-learning-description {
+    margin-bottom: 2.5rem;
+    padding-left: 1.2rem;
+  }
+
+  .game-zone-description {
+    margin-bottom: 2.5rem;
+    padding-left: 1.2rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .feature-list li {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .feature-list li i {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+    margin-right: 1.2rem;
+  }
+
+  .feature-list li h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .feature-list li p {
+    font-size: 1rem;
+  }
+
+  .interactive-gifs-container {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 0;
+  }
+
+  .game-zone-gifs-container {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 0;
+  }
+
+  .progress-tracking-images-container {
+    flex-direction: column !important; /* 강제로 세로 배치 */
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 0;
+    justify-content: center; /* space-between 대신 center 사용 */
+    align-items: center; /* 중앙 정렬 */
+  }
+
+  .laptop-frame-small {
+    max-width: 100%;
+  }
+
+  .screen-content-small {
+    height: 280px;
   }
   
   .main-features-section-title::before {
@@ -403,8 +651,65 @@
   
   .main-features-section-title {
     font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+  }
+
+  .interactive-learning-description {
     margin-bottom: 2rem;
     padding-left: 1rem;
+  }
+
+  .game-zone-description {
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+  }
+
+  .feature-list li {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-list li i {
+    width: 44px;
+    height: 44px;
+    font-size: 0.9rem;
+    margin-right: 1rem;
+  }
+
+  .feature-list li h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .feature-list li p {
+    font-size: 0.95rem;
+  }
+
+  .interactive-gifs-container {
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .game-zone-gifs-container {
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .progress-tracking-images-container {
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    flex-direction: column !important; /* 강제로 세로 배치 */
+    justify-content: center; /* space-between 대신 center 사용 */
+    align-items: center; /* 모바일에서 중앙 정렬 */
+  }
+
+  .screen-content-small {
+    height: 250px;
   }
   
   .main-features-section-title::before {

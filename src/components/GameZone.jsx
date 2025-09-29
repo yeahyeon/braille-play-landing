@@ -1,8 +1,6 @@
 import React from 'react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const GameZone = () => {
-  const gameZoneRef = useScrollAnimation({ animationClass: 'animate' });
 
   return (
     <section id="game-zone" className="game-zone-section section">
@@ -10,25 +8,42 @@ const GameZone = () => {
         <div className="main-features-section">
           <h3 className="main-features-section-title">Game Zone</h3>
           
-          <div ref={gameZoneRef} className="main-features-content main-features-slide-in-left">
-            <div className="main-features-video-container">
-              <video 
-                className="main-features-video"
-                controls
-                muted
-                preload="metadata"
-                poster="/src/assets/feature-assets/typing-game.png"
-              >
-                <source src="/src/assets/feature-assets/mov6.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+          <div className="game-zone-description">
+            <p className="section-description">Sharpen your Braille skills with fun, hands-on exercises.</p>
+            
+            <ul className="feature-list">
+              <li>
+                <i className="fas fa-gamepad"></i>
+                <div className="feature-item">
+                  <h4>Typing Game</h4>
+                  <p>Practice typing Braille characters quickly and accurately.</p>
+                </div>
+              </li>
+              <li>
+                <i className="fas fa-plus"></i>
+                <div className="feature-item">
+                  <h4>Math Quiz</h4>
+                  <p>Solve arithmetic problems using Braille numerals.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div className="game-zone-gifs-container">
+            <div className="laptop-frame-small">
+              <div className="laptop-screen-small">
+                <div className="screen-content-small">
+                  <img src="/src/assets/feature-assets/mov5.gif" alt="Math Quiz Demo" className="interactive-gif" />
+                </div>
+              </div>
             </div>
             
-            <div className="main-features-description">
-              <h4><i className="fas fa-gamepad"></i> Typing Game</h4>
-              <p>Practice typing Braille characters quickly and accurately.</p>
-              <p>Increase speed and familiarity with the Braille alphabet.</p>
-              <p>A fun and interactive way to gain proficiency.</p>
+            <div className="laptop-frame-small">
+              <div className="laptop-screen-small">
+                <div className="screen-content-small">
+                  <img src="/src/assets/feature-assets/mov6.gif" alt="Typing Game Demo" className="interactive-gif" />
+                </div>
+              </div>
             </div>
           </div>
         </div>

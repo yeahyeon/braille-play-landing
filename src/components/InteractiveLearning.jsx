@@ -1,103 +1,68 @@
 import React from 'react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const InteractiveLearning = () => {
-  const alphabetRef = useScrollAnimation({ animationClass: 'animate' });
-  const numberRef = useScrollAnimation({ animationClass: 'animate' });
-  const imageRef = useScrollAnimation({ animationClass: 'animate' });
-  const mathRef = useScrollAnimation({ animationClass: 'animate' });
 
   return (
     <div className="main-features-section">
       <h3 className="main-features-section-title">Interactive Learning</h3>
       
-      <div ref={alphabetRef} className="main-features-content main-features-slide-in-left">
-        <div className="main-features-video-container">
-          <video 
-            className="main-features-video"
-            controls
-            muted
-            preload="metadata"
-            poster="/src/assets/feature-assets/alphabet-learning.png"
-          >
-            <source src="/src/assets/feature-assets/mov1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+      <div className="interactive-learning-description">
+        <p className="section-description">Learn Braille in an engaging and hands-on way, combining visual, audio, and interactive practice to build confidence step by step.</p>
         
-        <div className="main-features-description">
-          <h4><i className="fas fa-font"></i> Alphabet Learning</h4>
-          <p>Step-by-step guide from A to Z.</p>
-          <p>Visual Braille cell representation and pronunciation support.</p>
-          <p>Practice mode with instant feedback and corrections.</p>
-        </div>
+        <ul className="feature-list">
+          <li>
+            <i className="fas fa-font"></i>
+            <div className="feature-item">
+              <h4>Alphabet Learning</h4>
+              <p>Learn letters A-Z with visual Braille and audio guidance.</p>
+            </div>
+          </li>
+          <li>
+            <i className="fas fa-hashtag"></i>
+            <div className="feature-item">
+              <h4>Number Learning</h4>
+              <p>Explore numbers and math in Braille with instant feedback.</p>
+            </div>
+          </li>
+          <li>
+            <i className="fas fa-image"></i>
+            <div className="feature-item">
+              <h4>Image-to-Braille</h4>
+              <p>Convert images to Braille words for fun practice.</p>
+            </div>
+          </li>
+        </ul>
       </div>
 
-      <div ref={numberRef} className="main-features-content number-learning-content main-features-slide-in-right">
-        <div className="main-features-description">
-          <h4><i className="fas fa-hashtag"></i> Number Learning</h4>
-          <p>Visual and audio representations of numbers.</p>
-          <p>Learn how to represent math in Braille.</p>
-          <p>Practice mode for typing numbers on the device.</p>
+      <div className="interactive-gifs-container">
+        <div className="laptop-frame-small">
+          <div className="laptop-screen-small">
+            <div className="screen-content-small">
+              <img src="/src/assets/feature-assets/playgif1.gif" alt="Interactive Learning Demo 1" className="interactive-gif" />
+            </div>
+          </div>
         </div>
         
-        <div className="main-features-video-container">
-          <video 
-            className="main-features-video"
-            controls
-            muted
-            preload="metadata"
-            poster="/src/assets/feature-assets/number-learning.png"
-          >
-            <source src="/src/assets/feature-assets/mov3.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div className="laptop-frame-small">
+          <div className="laptop-screen-small">
+            <div className="screen-content-small">
+              <img src="/src/assets/feature-assets/playgif3.gif" alt="Interactive Learning Demo 2" className="interactive-gif" />
+            </div>
+          </div>
+        </div>
+        
+        <div className="laptop-frame-small">
+          <div className="laptop-screen-small">
+            <div className="screen-content-small">
+              <img src="/src/assets/feature-assets/playgif4.gif" alt="Interactive Learning Demo 3" className="interactive-gif" />
+            </div>
+          </div>
         </div>
       </div>
+      
+      
+      
 
-      <div ref={imageRef} className="main-features-content main-features-slide-in-left">
-        <div className="main-features-video-container">
-          <video 
-            className="main-features-video"
-            controls
-            muted
-            preload="metadata"
-            poster="/src/assets/feature-assets/image-to-braille.png"
-          >
-            <source src="/src/assets/feature-assets/mov4.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        
-        <div className="main-features-description">
-          <h4><i className="fas fa-image"></i> Image-to-Braille</h4>
-          <p>Identify an image.</p>
-          <p>Input the corresponding Braille word.</p>
-          <p>A fun and educational way to test your knowledge.</p>
-        </div>
-      </div>
-
-      <div ref={mathRef} className="main-features-content math-quiz-content main-features-slide-in-right">
-        <div className="main-features-description">
-          <h4><i className="fas fa-plus"></i> Math Quiz</h4>
-          <p>Solve simple arithmetic problems using Braille numerals.</p>
-          <p>A puzzle that challenges your Braille knowledge.</p>
-          <p>A practical exercise to reinforce your learning.</p>
-        </div>
-        
-        <div className="main-features-video-container">
-          <video 
-            className="main-features-video"
-            controls
-            muted
-            preload="metadata"
-            poster="/src/assets/feature-assets/math-quiz.png"
-          >
-            <source src="/src/assets/feature-assets/mov5.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
     </div>
   );
 };
