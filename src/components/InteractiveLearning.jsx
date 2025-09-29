@@ -1,12 +1,15 @@
 import React from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const InteractiveLearning = () => {
+  const descriptionRef = useScrollAnimation({ animationClass: 'animate' });
+  const gifsRef = useScrollAnimation({ animationClass: 'animate' });
 
   return (
     <div className="main-features-section">
       <h3 className="main-features-section-title">Interactive Learning</h3>
       
-      <div className="interactive-learning-description">
+      <div ref={descriptionRef} className="interactive-learning-description main-features-slide-in-left">
         <p className="section-description">Learn Braille in an engaging and hands-on way, combining visual, audio, and interactive practice to build confidence step by step.</p>
         
         <ul className="feature-list">
@@ -34,7 +37,7 @@ const InteractiveLearning = () => {
         </ul>
       </div>
 
-      <div className="interactive-gifs-container">
+      <div ref={gifsRef} className="interactive-gifs-container main-features-slide-in-right">
         <div className="laptop-frame-small">
           <div className="laptop-screen-small">
             <div className="screen-content-small">

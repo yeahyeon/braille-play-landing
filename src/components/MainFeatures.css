@@ -415,9 +415,9 @@
   transform: translateY(-50%);
 }
 
-/* Animation Classes - MainFeatures 전용 클래스ㅇ명으로 충돌 방지 */
+/* Animation Classes - MainFeatures 전용 클래스명으로 충돌 방지 */
 .main-features-slide-in-left {
-  opacity: 1;
+  opacity: 0;
   transform: translateX(-100px);
   transition: all 0.8s ease-out;
 }
@@ -428,7 +428,7 @@
 }
 
 .main-features-slide-in-right {
-  opacity: 1;
+  opacity: 0;
   transform: translateX(100px);
   transition: all 0.8s ease-out;
 }
@@ -441,7 +441,7 @@
 /* Mobile Animation - 웹화면과 동일한 좌우 날아오는 효과 */
 @media (max-width: 768px) {
   .main-features-slide-in-left {
-    opacity: 1;
+    opacity: 0;
     transform: translateX(-100px) !important;
     transition: all 0.8s ease-out;
   }
@@ -452,7 +452,7 @@
   }
   
   .main-features-slide-in-right {
-    opacity: 1;
+    opacity: 0;
     transform: translateX(100px) !important;
     transition: all 0.8s ease-out;
   }

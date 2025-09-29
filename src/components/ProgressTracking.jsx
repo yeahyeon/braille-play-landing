@@ -1,11 +1,15 @@
 import React from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const ProgressTracking = () => {
+  const descriptionRef = useScrollAnimation({ animationClass: 'animate' });
+  const imagesRef = useScrollAnimation({ animationClass: 'animate' });
+
   return (
     <div className="main-features-section">
       <h3 className="main-features-section-title">Progress Tracking</h3>
       
-      <div className="progress-tracking-description">
+      <div ref={descriptionRef} className="progress-tracking-description main-features-slide-in-left">
         <p className="section-description">Track progress and celebrate achievements to stay motivated.</p>
         
         <ul className="feature-list">
@@ -33,7 +37,7 @@ const ProgressTracking = () => {
         </ul>
       </div>
 
-      <div className="progress-tracking-images-container">
+      <div ref={imagesRef} className="progress-tracking-images-container main-features-slide-in-right">
         <div className="laptop-frame-small">
           <div className="laptop-screen-small">
             <div className="screen-content-small">

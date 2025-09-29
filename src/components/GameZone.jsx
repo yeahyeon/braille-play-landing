@@ -1,6 +1,9 @@
 import React from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const GameZone = () => {
+  const descriptionRef = useScrollAnimation({ animationClass: 'animate' });
+  const gifsRef = useScrollAnimation({ animationClass: 'animate' });
 
   return (
     <section id="game-zone" className="game-zone-section section">
@@ -8,7 +11,7 @@ const GameZone = () => {
         <div className="main-features-section">
           <h3 className="main-features-section-title">Game Zone</h3>
           
-          <div className="game-zone-description">
+          <div ref={descriptionRef} className="game-zone-description main-features-slide-in-left">
             <p className="section-description">Sharpen your Braille skills with fun, hands-on exercises.</p>
             
             <ul className="feature-list">
@@ -29,7 +32,7 @@ const GameZone = () => {
             </ul>
           </div>
 
-          <div className="game-zone-gifs-container">
+          <div ref={gifsRef} className="game-zone-gifs-container main-features-slide-in-right">
             <div className="laptop-frame-small">
               <div className="laptop-screen-small">
                 <div className="screen-content-small">
