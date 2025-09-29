@@ -1,5 +1,8 @@
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import playgif1 from '../assets/feature-assets/playgif1.gif';
+import playgif3 from '../assets/feature-assets/playgif3.gif';
+import playgif4 from '../assets/feature-assets/playgif4.gif';
 
 const InteractiveLearning = () => {
   const descriptionRef = useScrollAnimation({ animationClass: 'animate' });
@@ -41,7 +44,7 @@ const InteractiveLearning = () => {
         <div className="laptop-frame-small">
           <div className="laptop-screen-small">
             <div className="screen-content-small">
-              <img src="/src/assets/feature-assets/playgif1.gif" alt="Interactive Learning Demo 1" className="interactive-gif" />
+              <img src={playgif1} alt="Interactive Learning Demo 1" className="interactive-gif" />
             </div>
           </div>
         </div>
@@ -49,7 +52,7 @@ const InteractiveLearning = () => {
         <div className="laptop-frame-small">
           <div className="laptop-screen-small">
             <div className="screen-content-small">
-              <img src="/src/assets/feature-assets/playgif3.gif" alt="Interactive Learning Demo 2" className="interactive-gif" />
+              <img src={playgif3} alt="Interactive Learning Demo 2" className="interactive-gif" />
             </div>
           </div>
         </div>
@@ -57,7 +60,7 @@ const InteractiveLearning = () => {
         <div className="laptop-frame-small">
           <div className="laptop-screen-small">
             <div className="screen-content-small">
-              <img src="/src/assets/feature-assets/playgif4.gif" alt="Interactive Learning Demo 3" className="interactive-gif" />
+              <img src={playgif4} alt="Interactive Learning Demo 3" className="interactive-gif" />
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import "./Hero.css";
+import heroGif from '../assets/feature-assets/playgif1.gif';
 
 const Hero = () => {
   const titleRef = useScrollAnimation({ animationClass: "slide-in-left" });
@@ -50,7 +51,7 @@ const Hero = () => {
                   </div>
                   <div className="web-content">
                   <img
-  src="/src/assets/feature-assets/playgif1.gif"
+  src={heroGif}
   alt="Hero Image"
   className="img-fluid hero-main-image"
 />

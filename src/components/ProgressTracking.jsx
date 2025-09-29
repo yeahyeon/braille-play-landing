@@ -1,5 +1,8 @@
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import myLearningStage from '../assets/feature-assets/my-learning-stage.png';
+import gameHistory from '../assets/feature-assets/game-history.png';
+import badgesAndAchievements from '../assets/feature-assets/badges-and-achievements.png';
 
 const ProgressTracking = () => {
   const descriptionRef = useScrollAnimation({ animationClass: 'animate' });
@@ -41,7 +44,7 @@ const ProgressTracking = () => {
         <div className="laptop-frame-small">
           <div className="laptop-screen-small">
             <div className="screen-content-small">
-              <img src="/src/assets/feature-assets/my-learning-stage.png" alt="My Learning Stage" className="interactive-gif" />
+              <img src={myLearningStage} alt="My Learning Stage" className="interactive-gif" />
             </div>
           </div>
         </div>
@@ -49,7 +52,7 @@ const ProgressTracking = () => {
         <div className="laptop-frame-small">
           <div className="laptop-screen-small">
             <div className="screen-content-small">
-              <img src="/src/assets/feature-assets/game-history.png" alt="Game History" className="interactive-gif" />
+              <img src={gameHistory} alt="Game History" className="interactive-gif" />
             </div>
           </div>
         </div>
@@ -57,7 +60,7 @@ const ProgressTracking = () => {
         <div className="laptop-frame-small">
           <div className="laptop-screen-small">
             <div className="screen-content-small">
-              <img src="/src/assets/feature-assets/badges-and-achievements.png" alt="Badges & Achievements" className="interactive-gif" />
+              <img src={badgesAndAchievements} alt="Badges & Achievements" className="interactive-gif" />
             </div>
           </div>
         </div>

@@ -1,6 +1,10 @@
 import React from "react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import "./DeviceSection.css";
+import brailleHw1 from '../assets/device/braille-hw.jpg';
+import brailleHw2 from '../assets/device/braille-hw2.jpg';
+import brailleVideo from '../assets/device/braille-play.mp4';
+import braillePoster from '../assets/device/braille-play-poster.png';
 
 const DeviceSection = () => {
   const imageRef = useScrollAnimation({ animationClass: "slide-in-left" });
@@ -20,10 +24,10 @@ const DeviceSection = () => {
           <div ref={imageRef} className="device-image-container">
             <div className="photo-stack">
               <figure className="photo p1">
-                <img src="/src/assets/device/braille-hw.jpg" alt="The Braille Play 2x4 Device" className="device-image" />
+                <img src={brailleHw1} alt="The Braille Play 2x4 Device" className="device-image" />
               </figure>
               <figure className="photo p2">
-                <img src="/src/assets/device/braille-hw2.jpg" alt="The Braille Play 2x4 Device" className="device-image" />
+                <img src={brailleHw2} alt="The Braille Play 2x4 Device" className="device-image" />
               </figure>
             </div>
           </div>
@@ -44,12 +48,12 @@ const DeviceSection = () => {
           <h3 className="video-title">Web Content in Action</h3>
           <div className="video-container">
             <video
-              src="/src/assets/device/braille-play.mp4"
+              src={brailleVideo}
               className="device-video"
               controls
               muted
               preload="metadata"
-              poster="/src/assets/device/braille-play-poster.png"
+              poster={braillePoster}
             >
               Your browser does not support the video tag.
             </video>

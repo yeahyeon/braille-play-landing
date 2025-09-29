@@ -1,5 +1,7 @@
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import mov5 from '../assets/feature-assets/mov5.gif';
+import mov6 from '../assets/feature-assets/mov6.gif';
 
 const GameZone = () => {
   const descriptionRef = useScrollAnimation({ animationClass: 'animate' });
@@ -36,7 +38,7 @@ const GameZone = () => {
             <div className="laptop-frame-small">
               <div className="laptop-screen-small">
                 <div className="screen-content-small">
-                  <img src="/src/assets/feature-assets/mov5.gif" alt="Math Quiz Demo" className="interactive-gif" />
+                  <img src={mov5} alt="Math Quiz Demo" className="interactive-gif" />
                 </div>
               </div>
             </div>
@@ -44,7 +46,7 @@ const GameZone = () => {
             <div className="laptop-frame-small">
               <div className="laptop-screen-small">
                 <div className="screen-content-small">
-                  <img src="/src/assets/feature-assets/mov6.gif" alt="Typing Game Demo" className="interactive-gif" />
+                  <img src={mov6} alt="Typing Game Demo" className="interactive-gif" />
                 </div>
               </div>
             </div>
