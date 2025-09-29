@@ -49,22 +49,11 @@ const Hero = () => {
                     <div className="browser-url">braille-play.com</div>
                   </div>
                   <div className="web-content">
-                    <div className="floating-elements">
-                      <div className="floating-card card-1 fade-in-up" style={{ animationDelay: "0.5s" }}>
-                        <i className="bi bi-book"></i>
-                        <span>Braille Learning</span>
-                      </div>
-                      <div className="floating-card card-2 fade-in-up" style={{ animationDelay: "0.7s" }}>
-                        <i className="bi bi-controller"></i>
-                        <span>Interactive Play</span>
-                      </div>
-                      <div className="floating-card card-3 fade-in-up" style={{ animationDelay: "0.9s" }}>
-                        <i className="bi bi-graph-up"></i>
-                        <span>Progress Tracking</span>
-                      </div>
-                    </div>
-                    <img src="/src/assets/hero-image.png" alt="Hero Image" className="img-fluid hero-main-image" />
-                    <div className="image-overlay"></div>
+                  <img
+  src="/src/assets/feature-assets/playgif1.gif"
+  alt="Hero Image"
+  className="img-fluid hero-main-image"
+/>
                   </div>
                 </div>
               </div>
